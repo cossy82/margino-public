@@ -1,8 +1,8 @@
 title: Margino
 description: Receipt-to-Sheet for small business owners — one tap to log every cost.
 theme: jekyll-theme-minimal
-url: "https://cossy82.github.io"
-baseurl: "/margino-public"
+url: "https://usemargino.com"
+baseurl: ""
 markdown: kramdown
 permalink: /blog/:title/
 future: true
@@ -13,7 +13,7 @@ plugins:
 # Author shown by minima theme footer
 author:
   name: Cemal Yılmaz
-  email: cemal.yilmaz@grupanya.com
+  email: cemalyilmazsmmm@gmail.com
 
 # Hide auto-generated post listings — this site is just static pages
 show_excerpts: false
