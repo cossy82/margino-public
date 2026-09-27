@@ -91,7 +91,7 @@ Margino 13 yaş altına yönelik bir hizmet değildir. 13 yaş altı bir kullan�
 
 - Tüm istemci-sunucu trafiği TLS 1.3 ile şifrelenir
 - Refresh token'lar Supabase Vault'ta KMS-yönetimli anahtarla şifrelenmiş halde saklanır
-- Kullanıcı oturum JWT'si HMAC-SHA256 ile imzalanır, kısa ömürlüdür (15 dk access + 30 gün refresh)
+- Kullanıcı oturum JWT'si HMAC-SHA256 ile imzalanır: 1 saatlik erişim anahtarı + 180 gün kullanılmazsa sona eren yenileme anahtarı; her yenilemede değişir, tekrar kullanılan anahtar oturumu kapatır
 - Üçüncü taraf hizmet sağlayıcılarının hepsi SOC 2 Type II veya ISO 27001 sertifikalıdır
 
 ## 9. Politikadaki Değişiklikler

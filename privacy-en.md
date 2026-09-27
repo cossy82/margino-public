@@ -92,7 +92,7 @@ Margino is not intended for users under 13. If we discover data has been collect
 
 - All client-server traffic is encrypted with TLS 1.3
 - Refresh tokens are stored in Supabase Vault encrypted with KMS-managed keys
-- Session JWTs are signed with HMAC-SHA256 and short-lived (15 min access + 30 day refresh)
+- Session JWTs are signed with HMAC-SHA256: 1-hour access token + refresh token that expires after 180 days without use; each refresh rotates it and a reused refresh token signs the session out
 - All third-party providers are SOC 2 Type II or ISO 27001 certified
 
 ## 9. Changes to this Policy

@@ -94,7 +94,7 @@ Margino no está destinado a usuarios menores de 13 años. Si descubrimos que se
 
 - Todo el tráfico cliente-servidor está cifrado con TLS 1.3
 - Los tokens de actualización se almacenan en Supabase Vault, cifrados con claves gestionadas por KMS
-- Los JWT de sesión se firman con HMAC-SHA256 y tienen vida corta (15 min de acceso + 30 días de actualización)
+- Los JWT de sesión se firman con HMAC-SHA256: token de acceso de 1 hora + token de actualización que vence tras 180 días sin uso; cada actualización lo rota y un token reutilizado cierra la sesión
 - Todos los proveedores externos cuentan con certificación SOC 2 Type II o ISO 27001
 
 ## 9. Cambios en esta Política
