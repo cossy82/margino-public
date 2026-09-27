@@ -7,7 +7,7 @@ permalink: /privacy-en.html
 # Margino Privacy Policy
 
 **Effective date:** 8 May 2026
-**Last updated:** 8 May 2026
+**Last updated:** 27 September 2026
 
 This Privacy Policy explains how Margino ("App", "Service") collects, uses, stores, and protects your personal data. It is provided in compliance with the EU General Data Protection Regulation (GDPR) and Türkiye's Personal Data Protection Law (KVKK).
 
@@ -27,7 +27,7 @@ When you use the App, we process the following data:
 |---|---|---|
 | Identity | Google account ID (sub), name, profile picture | Google OAuth |
 | Contact | Email associated with your Google account | Google OAuth |
-| Service Usage | Receipt/invoice images you upload (transient), parsed line items (vendor, items, prices, totals, tax), your Google Sheet ID, your target profit margin preference | App use |
+| Service Usage | Receipt/invoice images you upload (transient), parsed line items (vendor, items, prices, totals, tax), your product list (product names, suppliers, pack sizes, latest and previous unit cost), your target profit margin and delivery-app commission preferences, your Google Sheet ID if you connect one | App use |
 | Technical / Device | IP address, request timestamp | Cloudflare access logs |
 | Billing (future) | RevenueCat subscription state | App Store / Play Store |
 
@@ -35,7 +35,7 @@ When you use the App, we process the following data:
 
 | Purpose | Legal Basis |
 |---|---|
-| OCR-parsing your receipt and writing it to your own Google Sheet | Performance of contract (Art. 6(1)(b)) |
+| OCR-parsing your receipt, keeping your product list and suggested prices in the App, and — only if you connect it — writing them to your own Google Sheet | Performance of contract (Art. 6(1)(b)) |
 | Account authentication and session management | Performance of contract (Art. 6(1)(b)) |
 | Preventing service abuse (rate-limit, error logs) | Legitimate interest (Art. 6(1)(f)) |
 | Anonymous regional price benchmarking | Legitimate interest (Art. 6(1)(f)) — no user identifier attached |
@@ -50,7 +50,7 @@ We share your data with the following service providers solely to operate Margin
 | Anthropic, PBC | USA | AI parsing of receipt images (Claude API) | Receipt images (transient, deleted after parse) |
 | Google LLC | Global | Google OAuth, Sheets API (writing to your own sheet), Drive metadata | Google profile, encrypted refresh token |
 | Cloudflare, Inc. | USA (edge POPs are global) | App backend (Workers), queue processing, access logs | All request payloads (transient in RAM, no persistent storage) |
-| Supabase, Inc. | USA (us-east-1) | Postgres database (user records, encrypted refresh token), Vault (key management) | Identity, contact, encrypted refresh token |
+| Supabase, Inc. | USA (us-east-1) | Postgres database (user records, parsed receipts, your product list, encrypted refresh token), Vault (key management) | Identity, contact, parsed receipt content, product list, encrypted refresh token |
 | PostHog, Inc. | USA | Product analytics (coming soon) | Anonymous events |
 | RevenueCat, Inc. | USA | Subscription management (post-Apple approval) | Anonymous subscription state |
 
@@ -60,8 +60,8 @@ We share your data with the following service providers solely to operate Margin
 
 | Data | Retention |
 |---|---|
-| Receipt images | Until parsed and written to your Sheet (seconds); never persisted |
-| Parsed receipt content | Stored in your own Google Sheet — not retained on our servers |
+| Receipt images | Until parsed (seconds); never persisted |
+| Parsed receipt content and your product list | While your account is active; cascade-deleted on account deletion. If you connect Google Sheets, a copy also lives in your own Sheet, which you own |
 | Encrypted refresh token (Supabase) | While account is active; deleted immediately on account deletion |
 | User record (Supabase users table) | While account is active; cascade-deleted on account deletion |
 | Receipt log (timestamp, success/failure) | While account is active; cascade-deleted on account deletion |
@@ -76,7 +76,7 @@ You have the following rights regarding your personal data:
 - **Right to rectification** (Art. 16): correct inaccurate data
 - **Right to erasure** (Art. 17): delete your data — available instantly via **Settings → Delete Account** in the App
 - **Right to restriction** (Art. 18): limit how we process your data
-- **Right to data portability** (Art. 20): your parsed receipt data is already in your own Google Sheet, which you fully own and can export
+- **Right to data portability** (Art. 20): export your products and prices to your own Google Sheet from **Settings → Export to Google Sheets**, or email us for a copy
 - **Right to object** (Art. 21): object to processing based on legitimate interest
 - **Right to withdraw consent** (Art. 7(3)): for any processing relying on consent
 - **Right to lodge a complaint**: with the Türkiye KVKK Authority (kvkk.gov.tr) or your local EU Data Protection Authority

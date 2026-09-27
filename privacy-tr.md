@@ -7,7 +7,7 @@ permalink: /privacy-tr.html
 # Margino Gizlilik Politikası
 
 **Yürürlük tarihi:** 8 Mayıs 2026
-**Son güncelleme:** 8 Mayıs 2026
+**Son güncelleme:** 27 Eylül 2026
 
 Bu Gizlilik Politikası, Margino mobil uygulamasını ("Uygulama") ve ilgili hizmetleri ("Hizmet") kullanırken kişisel verilerinizin nasıl toplandığını, kullanıldığını, saklandığını ve korunduğunu açıklar. 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında bilgilendirme niteliğindedir.
 
@@ -25,7 +25,7 @@ Uygulamayı kullandığınızda aşağıdaki veriler işlenir:
 |---|---|---|
 | Kimlik | Google hesap kimliği (sub), ad, profil resmi | Google OAuth |
 | İletişim | Google hesabınızla bağlı e-posta adresi | Google OAuth |
-| Hizmet Kullanımı | Yüklediğiniz fatura/makbuz görselleri (geçici), parse edilen satır bilgileri (satıcı, ürün, fiyat, toplam, KDV), Google Sheet ID'niz, hedef kâr marjı tercihiniz | Uygulama kullanımı |
+| Hizmet Kullanımı | Yüklediğiniz fatura/makbuz görselleri (geçici), parse edilen satır bilgileri (satıcı, ürün, fiyat, toplam, KDV), ürün listeniz (ürün adı, tedarikçi, paket, son ve önceki birim maliyet), hedef kâr marjı ve teslimat uygulaması komisyon tercihleriniz, bağlarsanız Google Sheet ID'niz | Uygulama kullanımı |
 | Teknik/Cihaz | IP adresi, istek zaman damgası | Cloudflare erişim logları |
 | Faturalandırma (gelecekte) | RevenueCat abonelik durumu | App Store / Play Store |
 
@@ -33,7 +33,7 @@ Uygulamayı kullandığınızda aşağıdaki veriler işlenir:
 
 | Amaç | Hukuki Sebep (KVKK m.5) |
 |---|---|
-| Faturanın OCR ile okunup kullanıcının Google Sheet'ine yazılması | Sözleşmenin ifası (m.5/2/c) |
+| Faturanın OCR ile okunması, ürün listesi ve önerilen fiyatların uygulamada tutulması ve — yalnız bağlarsanız — kendi Google Sheet'inize yazılması | Sözleşmenin ifası (m.5/2/c) |
 | Hesap kimlik doğrulaması ve oturum yönetimi | Sözleşmenin ifası (m.5/2/c) |
 | Hizmet kötüye kullanımının önlenmesi (rate-limit, hata logları) | Meşru menfaat (m.5/2/f) |
 | Anonim bölgesel piyasa fiyatı kıyaslaması | Meşru menfaat (m.5/2/f) — kişi tanımlayıcı bilgi olmadan |
@@ -48,7 +48,7 @@ Uygulama, kişisel verilerinizi aşağıdaki hizmet sağlayıcılarla paylaşır
 | Anthropic, PBC | ABD | Fatura görselinin AI ile parse edilmesi (Claude API) | Fatura görseli (geçici, parse sonrası silinir) |
 | Google LLC | Global | Google OAuth, Sheets API (kullanıcının kendi sheet'ine yazma), Drive metadata | Google profili, refresh token (şifreli) |
 | Cloudflare, Inc. | ABD (edge POP'ları globaldir) | Uygulama backend'i (Workers), kuyruk işleme, erişim logları | Tüm istek payload'ları (RAM'de geçici, persistent storage yok) |
-| Supabase, Inc. | ABD (us-east-1) | Postgres veritabanı (kullanıcı kayıtları, şifrelenmiş refresh token), Vault (anahtar yönetimi) | Kimlik, iletişim, refresh token (şifreli) |
+| Supabase, Inc. | ABD (us-east-1) | Postgres veritabanı (kullanıcı kayıtları, parse edilmiş faturalar, ürün listeniz, şifrelenmiş refresh token), Vault (anahtar yönetimi) | Kimlik, iletişim, fatura içeriği, ürün listesi, refresh token (şifreli) |
 | PostHog, Inc. | ABD | Ürün analitikleri (yakında etkin) | Anonim event'ler |
 | RevenueCat, Inc. | ABD | Abonelik yönetimi (Apple onayı sonrası) | Anonim abonelik durumu |
 
@@ -58,8 +58,8 @@ Uygulama, kişisel verilerinizi aşağıdaki hizmet sağlayıcılarla paylaşır
 
 | Veri | Saklama Süresi |
 |---|---|
-| Fatura görselleri | İşlenip Sheet'e yazılana kadar (saniyeler); kalıcı saklama yok |
-| Parse edilmiş fatura verisi | Kullanıcının kendi Google Sheet'inde durur — bizim sunucumuzda saklanmaz |
+| Fatura görselleri | İşlenene kadar (saniyeler); kalıcı saklama yok |
+| Parse edilmiş fatura verisi ve ürün listesi | Hesap aktif olduğu sürece; hesap silinmesinde cascade delete. Google Sheets bağlarsanız bir kopyası da size ait Sheet'te durur |
 | Şifrelenmiş refresh token (Supabase) | Hesap aktif olduğu sürece; hesap silinmesinde anında silinir |
 | Kullanıcı kayıt verisi (Supabase users tablosu) | Hesap aktif olduğu sürece; hesap silinmesinde cascade delete |
 | Receipt log (zaman damgası, başarı/başarısızlık) | Hesap aktif olduğu sürece; cascade delete |
