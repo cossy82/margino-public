@@ -1,0 +1,87 @@
+# Margino uptime alarm (margino issue #70).
+#
+# Every hour: GET /health/db on the production worker (one trivial DB
+# read). If it fails 3 times in a row, open an "outage" issue in this repo
+# (GitHub emails the owner); while it stays down, comment on that issue;
+# when it recovers, close it. Lives in this PUBLIC repo on purpose: public
+# repos get free Actions minutes, so the alarm never competes with the
+# private repos' quota. Context: the free Supabase project sat paused for
+# weeks in 2026 and nobody noticed (#62).
+#
+# GitHub disables scheduled workflows in public repos after 60 days with
+# no activity — the "keepalive" step makes an empty commit on the 1st of
+# each month so the alarm cannot silently switch itself off.
+name: Margino uptime
+
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: uptime
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      URL: https://margino-worker.cemalyilmazsmmm.workers.dev/health/db
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+    steps:
+      - name: Probe /health/db
+        id: probe
+        run: |
+          code=000
+          for i in 1 2 3; do
+            code=$(curl -s -o body.txt -w '%{http_code}' --max-time 20 "$URL" || true)
+            if [ "$code" = "200" ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+            sleep 30
+          done
+          echo "ok=false" >> "$GITHUB_OUTPUT"
+          echo "code=${code:-000}" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the outage issue
+        if: steps.probe.outputs.ok == 'false'
+        run: |
+          now=$(date -u '+%Y-%m-%d %H:%M UTC')
+          n=$(gh issue list -R "$REPO" --label outage --state open --json number -q '.[0].number')
+          if [ -n "$n" ]; then
+            gh issue comment "$n" -R "$REPO" --body "Still down at $now (HTTP ${{ steps.probe.outputs.code }})."
+          else
+            gh label create outage -R "$REPO" --color B60205 --description "Production is down" 2>/dev/null || true
+            gh issue create -R "$REPO" --label outage \
+              --title "Margino is DOWN: /health/db returned HTTP ${{ steps.probe.outputs.code }}" \
+              --body "The hourly uptime check failed 3 times in a row at $now.
+
+          Check first:
+          1. \`dig @8.8.8.8 hfddtvstvfprubnyzwwq.supabase.co\` — NXDOMAIN means the free Supabase project is paused → dashboard → Resume project.
+          2. \`curl $URL\` and \`wrangler tail\` on margino-worker.
+
+          This issue closes itself when the check passes again."
+          fi
+          exit 1
+
+      - name: Close the outage issue on recovery
+        if: steps.probe.outputs.ok == 'true'
+        run: |
+          for n in $(gh issue list -R "$REPO" --label outage --state open --json number -q '.[].number'); do
+            gh issue close "$n" -R "$REPO" --comment "Recovered at $(date -u '+%Y-%m-%d %H:%M UTC')."
+          done
+
+      - name: Monthly keepalive commit
+        if: always()
+        run: |
+          if [ "$(date -u +%d)" = "01" ] && [ "$(date -u +%H)" = "00" ]; then
+            git clone -q --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" repo
+            cd repo
+            git -c user.name="uptime-bot" -c user.email="uptime-bot@users.noreply.github.com" \
+              commit -q --allow-empty -m "chore: uptime keepalive"
+            git push -q
+          fi
