@@ -31,6 +31,7 @@ Cuando usa la Aplicación, procesamos los siguientes datos:
 | Contacto | Correo electrónico asociado a su cuenta de Google | Google OAuth |
 | Uso del Servicio | Imágenes de recibos/facturas que sube (transitorias), líneas de artículo extraídas (proveedor, artículos, precios, totales, impuestos), su lista de productos (nombres de productos, proveedores, tamaños de paquete, costo unitario más reciente y anterior), su margen de ganancia objetivo y sus preferencias de comisión de apps de reparto, el ID de su Google Sheet si conecta uno | Uso de la Aplicación |
 | Técnico / Dispositivo | Dirección IP, marca de tiempo de la solicitud | Registros de acceso de Cloudflare |
+| Notificaciones (opcional) | Token de notificaciones push e idioma de la app, solo si permite las notificaciones — se usa para el aviso semanal de costos de proveedores | Aplicación (iOS) |
 | Facturación (futuro) | Estado de suscripción de RevenueCat | App Store / Play Store |
 
 ## 3. Finalidades y Bases Legales (Artículo 6 del GDPR)

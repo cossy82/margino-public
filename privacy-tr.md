@@ -27,6 +27,7 @@ Uygulamayı kullandığınızda aşağıdaki veriler işlenir:
 | İletişim | Google hesabınızla bağlı e-posta adresi | Google OAuth |
 | Hizmet Kullanımı | Yüklediğiniz fatura/makbuz görselleri (geçici), parse edilen satır bilgileri (satıcı, ürün, fiyat, toplam, KDV), ürün listeniz (ürün adı, tedarikçi, paket, son ve önceki birim maliyet), hedef kâr marjı ve teslimat uygulaması komisyon tercihleriniz, bağlarsanız Google Sheet ID'niz | Uygulama kullanımı |
 | Teknik/Cihaz | IP adresi, istek zaman damgası | Cloudflare erişim logları |
+| Bildirimler (isteğe bağlı) | Push bildirim token'ı ve uygulama dili — yalnızca bildirimlere izin verirseniz; haftalık tedarikçi maliyet uyarısı için | Uygulama (iOS) |
 | Faturalandırma (gelecekte) | RevenueCat abonelik durumu | App Store / Play Store |
 
 ## 3. İşleme Amaçları ve Hukuki Sebepler

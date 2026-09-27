@@ -29,6 +29,7 @@ When you use the App, we process the following data:
 | Contact | Email associated with your Google account | Google OAuth |
 | Service Usage | Receipt/invoice images you upload (transient), parsed line items (vendor, items, prices, totals, tax), your product list (product names, suppliers, pack sizes, latest and previous unit cost), your target profit margin and delivery-app commission preferences, your Google Sheet ID if you connect one | App use |
 | Technical / Device | IP address, request timestamp | Cloudflare access logs |
+| Notifications (optional) | Push notification token and app language, only if you allow notifications — used for the weekly supplier-cost alert | App (iOS) |
 | Billing (future) | RevenueCat subscription state | App Store / Play Store |
 
 ## 3. Purposes and Legal Bases (GDPR Article 6)
