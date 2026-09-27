@@ -6,7 +6,7 @@ permalink: /terms-en.html
 
 # Terms of Service
 
-**Last updated:** May 10, 2026
+**Last updated:** September 27, 2026
 
 ## 1. Acceptance of Terms
 
@@ -40,11 +40,12 @@ You agree NOT to:
 Margino allows you to:
 - Capture photos of supplier invoices and retail receipts
 - Receive parsed line-item data extracted by AI vision technology
-- Have parsed data automatically written to **your own Google Sheet**
-- See suggested in-store, delivery-platform, and retail prices based on your target margin
-- Receive Smart Profit insights based on regional cost benchmarks
+- Keep a product list with your latest costs in the App
+- See suggested in-store and delivery-platform prices based on your target margin and your delivery-app commission plan
+- Receive cost insights based on regional cost benchmarks and public reference prices (e.g. US Bureau of Labor Statistics average prices)
+- Optionally, have your products and prices written to **your own Google Sheet**
 
-**Important: your Google Sheet is owned by you.** Margino only writes new rows or updates existing rows; we never read or modify other files in your Google Drive. You can delete the Sheet, share it, or revoke Margino's access at any time via Google Account → Security → Third-party access.
+**If you connect Google Sheets, the Sheet is owned by you.** Margino only writes new rows or updates existing rows; we never read or modify other files in your Google Drive. You can delete the Sheet, share it, or revoke Margino's access at any time via Google Account → Security → Third-party access.
 
 ## 5. User Responsibilities
 
