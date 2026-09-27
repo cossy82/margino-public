@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Margino — Sabe cuánto cobrar en DoorDash, Uber Eats y en tienda</title>
+<meta name="description" content="Toma una foto del recibo de tu proveedor. Margino lee cada costo y te dice el precio que cuida tu margen en DoorDash, Uber Eats y en tienda.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="alternate" hreflang="en" href="https://usemargino.com/">
+<link rel="alternate" hreflang="es" href="https://usemargino.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://usemargino.com/">
+<link rel="canonical" href="https://usemargino.com/es/">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Margino — Ganancia inteligente para negocios de comida">
+<meta property="og:description" content="Toma una foto del recibo. Obtén el precio que cuida tu margen en cada app de delivery.">
+<meta property="og:image" content="https://usemargino.com/assets/es-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#1B2A4A; --navy-2:#27396B; --navy-soft:#EDF0F7;
+    --gold:#C9A227; --gold-soft:#F7EFD4;
+    --ink:#1B2230; --muted:#5A6478; --line:#E4E8F0; --bg:#F7F8FB; --white:#fff;
+    --radius:18px; --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;border-radius:999px;padding:14px 26px;transition:.15s ease;cursor:pointer;border:0;font-size:16px}
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:var(--navy-2);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--navy)}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:20;background:rgba(247,248,251,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--navy)}
+  .brand img{width:30px;height:30px;border-radius:8px}
+  nav .btn{padding:10px 20px;font-size:15px}
+
+  /* HERO */
+  .hero{padding:72px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero h1{font-size:46px;line-height:1.08;font-weight:800;letter-spacing:-.02em;color:var(--navy);margin:16px 0}
+  .hero h1 .hl{color:var(--gold)}
+  .hero p.lead{font-size:19px;color:var(--muted);max-width:520px;margin-bottom:28px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .free-note{font-size:14px;color:var(--muted);margin-top:16px}
+  .free-note b{color:var(--ink)}
+  .hero-visual{background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:24px;padding:28px;box-shadow:0 24px 60px -20px rgba(27,42,74,.45)}
+  .hero-visual img{width:100%;border-radius:12px;display:block;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+  .hero-visual .cap{color:#fff;font-size:14px;margin-top:14px;opacity:.85;text-align:center}
+  .hero-visual .cap b{color:var(--gold)}
+
+  /* SECTIONS */
+  section.block{padding:64px 0}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 44px}
+  .sec-head h2{font-size:34px;font-weight:800;letter-spacing:-.02em;color:var(--navy);margin:10px 0}
+  .sec-head p{color:var(--muted);font-size:18px}
+
+  /* PROBLEM */
+  .problem{background:var(--navy);color:#fff}
+  .problem .sec-head h2{color:#fff}
+  .problem .sec-head p{color:#C3CBDE}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+  .stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:28px 24px;text-align:center}
+  .stat .num{font-size:38px;font-weight:800;color:var(--gold);letter-spacing:-.02em}
+  .stat .lbl{color:#C3CBDE;font-size:15px;margin-top:6px}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+  .step .ph{background:var(--navy-soft);padding:22px 22px 0;text-align:center}
+  .step .ph img{width:100%;max-width:230px;border-radius:14px 14px 0 0;display:block;margin:0 auto;box-shadow:0 -2px 18px rgba(27,42,74,.10)}
+  .step .body{padding:22px 24px 26px}
+  .step .n{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--gold-soft);color:var(--gold);font-weight:700;align-items:center;justify-content:center;font-size:15px;margin-bottom:10px}
+  .step h3{font-size:19px;color:var(--navy);margin-bottom:6px}
+  .step p{color:var(--muted);font-size:15px}
+
+  /* FEATURES */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .feat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .feat .ic{font-size:24px;margin-bottom:12px}
+  .feat h3{font-size:17px;color:var(--navy);margin-bottom:6px}
+  .feat p{color:var(--muted);font-size:15px}
+
+  /* PRICING */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;display:flex;flex-direction:column}
+  .plan.feature{border:2px solid var(--gold);box-shadow:0 16px 40px -18px rgba(201,162,39,.5);position:relative}
+  .plan .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:999px;letter-spacing:.04em}
+  .plan h3{font-size:18px;color:var(--navy)}
+  .plan .price{font-size:38px;font-weight:800;color:var(--navy);margin:12px 0 2px;letter-spacing:-.02em}
+  .plan .price span{font-size:16px;font-weight:500;color:var(--muted)}
+  .plan .yr{font-size:14px;color:var(--muted);margin-bottom:18px}
+  .plan ul{list-style:none;margin:0 0 22px;flex:1}
+  .plan li{font-size:15px;color:var(--ink);padding:7px 0 7px 26px;position:relative}
+  .plan li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+  .plan .btn{width:100%;justify-content:center}
+  .price-foot{text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
+
+  /* FAQ */
+  .faq{max-width:780px;margin:0 auto}
+  details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+  details summary{font-weight:600;color:var(--navy);cursor:pointer;list-style:none;font-size:16px;display:flex;justify-content:space-between}
+  details summary::-webkit-details-marker{display:none}
+  details summary:after{content:"+";color:var(--gold);font-weight:700}
+  details[open] summary:after{content:"–"}
+  details p{color:var(--muted);font-size:15px;margin-top:12px}
+
+  /* CTA BAND */
+  .cta-band{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;text-align:center;border-radius:24px;padding:56px 32px;margin:64px 0}
+  .cta-band h2{font-size:32px;font-weight:800;margin-bottom:12px}
+  .cta-band p{color:#C3CBDE;font-size:18px;margin-bottom:26px}
+  .cta-band .btn-primary{background:var(--gold);color:var(--navy)}
+  .cta-band .btn-primary:hover{background:#d8b43a}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+  footer .links{display:flex;gap:20px;flex-wrap:wrap}
+  footer a:hover{color:var(--navy)}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .hero h1{font-size:36px}
+    .steps,.feat-grid,.price-grid,.stat-row{grid-template-columns:1fr}
+    .hero{padding:48px 0 36px}
+    section.block{padding:48px 0}
+  }
+
+  .lang{font-weight:600;font-size:14px;color:var(--muted);border:1.5px solid var(--line);border-radius:999px;padding:6px 12px}
+  .lang:hover{border-color:var(--navy);color:var(--navy)}
+  .notice{background:var(--gold-soft);color:var(--navy);font-size:14px;text-align:center;padding:10px 16px;font-weight:500}
+  .hero-visual img.tall{width:auto;max-width:100%;max-height:560px;margin:0 auto;box-shadow:none;border-radius:16px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/es/"><img src="/assets/logo.png" alt="Logo de Margino">Margino</a>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a class="lang" href="/" hreflang="en" lang="en">English</a>
+      <a class="btn btn-primary" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX">Descargar</a>
+    </div>
+  </div>
+</nav>
+<div class="notice">La app en español llega con la próxima actualización, en los próximos días.</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Ganancia inteligente para negocios de comida</span>
+      <h1>Sabe exactamente cuánto cobrar en <span class="hl">DoorDash, Uber Eats y en tienda.</span></h1>
+      <p class="lead">Toma una foto del recibo de tu proveedor. Margino lee cada renglón y te dice el precio que cuida tu margen en cada plataforma.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX">Descargar en el App Store</a>
+        <a class="btn btn-ghost" href="#como">Ver cómo funciona</a>
+      </div>
+      <p class="free-note">Empieza gratis: <b>10 recibos al mes, sin tarjeta.</b></p>
+    </div>
+    <div class="hero-visual">
+      <img class="tall" src="/assets/es-home.jpg" alt="Margino en español: gasto con proveedores y precios para tienda, Uber Eats y DoorDash">
+      <div class="cap">Entran tus costos → <b>salen precios con ganancia</b>, por plataforma.</div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="block problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">El problema de las comisiones</span>
+      <h2>Las apps de delivery se comen tu margen, y casi todos ponen precios al tanteo.</h2>
+      <p>Las comisiones van del 15% al 30% por pedido. Los costos de tus proveedores suben semana a semana. Si no ajustas el precio de cada producto, pierdes dinero en pedidos que crees que te dejan ganancia.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="num">15–30%</div><div class="lbl">se va en comisiones en cada pedido a domicilio</div></div>
+      <div class="stat"><div class="num">Cada semana</div><div class="lbl">cambian los precios de tus proveedores, y los de tu menú no</div></div>
+      <div class="stat"><div class="num">1 foto</div><div class="lbl">es todo lo que Margino necesita para hacer las cuentas por ti</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="block" id="como">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>Del recibo al precio con ganancia, en un toque.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="ph"><img src="/assets/capture.jpeg" alt="Pantalla para fotografiar un recibo"></div>
+        <div class="body"><span class="n">1</span><h3>Toma la foto del recibo</h3><p>Fotografía cualquier factura de proveedor o ticket de compra. Sin teclear y sin armar hojas de cálculo.</p></div>
+      </div>
+      <div class="step">
+        <div class="ph"><img src="/assets/receipt-detail.jpeg" alt="Renglones del recibo leídos por Margino"></div>
+        <div class="body"><span class="n">2</span><h3>Margino lee cada renglón</h3><p>Cada producto, su costo unitario y el proveedor se leen solos, y te los muestra para una revisión rápida.</p></div>
+      </div>
+      <div class="step">
+        <div class="ph"><img src="/assets/es-dish.jpg" alt="Costo por porción de un platillo y precios sugeridos"></div>
+        <div class="body"><span class="n">3</span><h3>Obtén tus precios</h3><p>Precios sugeridos para tienda, Uber Eats y DoorDash que cuidan tu margen, directo en la app. Si quieres, también una copia en tu propio Google Sheet.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Por qué Margino</span>
+      <h2>Hecho para como de verdad trabajan los negocios de comida.</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="ic">📄</div><h3>Captura en un toque</h3><p>Toma foto de facturas o tickets: Margino hace la captura de datos por ti.</p></div>
+      <div class="feat"><div class="ic">📊</div><h3>Tus datos son tuyos</h3><p>Tus productos y precios viven en la app y, si quieres, en un Google Sheet tuyo. Sin amarres: exporta cuando quieras o compártelo con tu contador.</p></div>
+      <div class="feat"><div class="ic">💸</div><h3>Precio por plataforma</h3><p>Precios sugeridos para tienda, Uber Eats y DoorDash que protegen tu margen objetivo.</p></div>
+      <div class="feat"><div class="ic">🚩</div><h3>Alertas de alzas</h3><p>Te avisa cuando un producto cuesta más que el promedio de tu zona, para que detectes los aumentos a tiempo.</p></div>
+      <div class="feat"><div class="ic">🔒</div><h3>Privado por diseño</h3><p>Entra con Apple. Nunca vendemos tus recibos ni los usamos para publicidad.</p></div>
+      <div class="feat"><div class="ic">⚡</div><h3>Hecho para el celular</h3><p>App rápida y ligera para iPhone, pensada para el mostrador, no para una computadora en la oficina.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="block" id="roadmap">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Lo que viene</span>
+      <h2>Lo que estamos construyendo.</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="ic">🧾</div><h3>Precios dentro de la app</h3><p>Sin hojas de cálculo: cada recibo se vuelve tu lista de productos con precios para tienda, Uber Eats y DoorDash. Google Sheets pasa a ser opcional. <b>En revisión de Apple.</b></p></div>
+      <div class="feat"><div class="ic">🍔</div><h3>Costeo de platillos</h3><p>Combina ingredientes de tus recibos en un platillo y ve su costo por porción, el precio para cada canal y tu margen real con el precio de tu menú. <b>Próxima actualización.</b></p></div>
+      <div class="feat"><div class="ic">🇲🇽</div><h3>En español</h3><p>Margino en español, de la app a las alertas de precio. <b>Próxima actualización.</b></p></div>
+      <div class="feat"><div class="ic">🔔</div><h3>Alertas de los lunes</h3><p>Un aviso semanal cuando un proveedor sube un precio, para que ajustes tu menú antes de perder margen. <b>Próxima actualización.</b></p></div>
+      <div class="feat"><div class="ic">🥚</div><h3>Comparación de precios en EE. UU.</h3><p>Compara lo que pagas por básicos como huevo, pollo o leche con el precio promedio al público en EE. UU. (datos oficiales del BLS). <b>Próxima actualización.</b></p></div>
+      <div class="feat"><div class="ic">📍</div><h3>Más barato cerca</h3><p>Mientras más negocios escanean, verás dónde se compró el mismo producto más barato cerca de ti: solo nombres de proveedores, nunca quién lo compró. <b>Planeado.</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Precios</span>
+      <h2>Empieza gratis. Sube de plan cuando se pague solo.</h2>
+      <p>Cancela cuando quieras desde el App Store.</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <h3>Starter</h3>
+        <div class="price">$29.99<span>/mes</span></div>
+        <div class="yr">o $249/año</div>
+        <ul><li>Para un solo local</li><li>Hasta 300 recibos al mes</li><li>Precios sugeridos por plataforma</li><li>Alertas de alzas de costo</li></ul>
+        <a class="btn btn-ghost" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX">Empezar</a>
+      </div>
+      <div class="plan feature">
+        <span class="tag">EL MÁS POPULAR</span>
+        <h3>Growth</h3>
+        <div class="price">$49.99<span>/mes</span></div>
+        <div class="yr">o $419/año</div>
+        <ul><li>Hasta 1,000 recibos al mes</li><li>Todo lo de Starter</li><li>Para cocinas con mucho movimiento</li><li>Lectura prioritaria</li></ul>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX">Empezar</a>
+      </div>
+      <div class="plan">
+        <h3>Business</h3>
+        <div class="price">$99.99<span>/mes</span></div>
+        <div class="yr">o $799/año</div>
+        <ul><li>Recibos ilimitados</li><li>Todo lo de Growth</li><li>Para operaciones con muchos proveedores</li><li>El mejor valor por recibo</li></ul>
+        <a class="btn btn-ghost" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX">Empezar</a>
+      </div>
+    </div>
+    <p class="price-foot">El plan gratis incluye 10 recibos al mes, sin tarjeta. Precios en USD; consulta el App Store para el precio en tu región.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Preguntas frecuentes</span><h2>Tus preguntas, respondidas.</h2></div>
+    <div class="faq">
+      <details><summary>¿A dónde van mis datos?</summary><p>Margino guarda tus productos y costos de forma segura para calcular tus precios y, si quieres, puedes tener una copia en vivo en un Google Sheet que es tuyo. Puedes borrar tu cuenta y tus datos cuando quieras desde Ajustes.</p></details>
+      <details><summary>¿Cómo se calculan los precios por plataforma?</summary><p>Margino parte de tu costo unitario real y calcula el precio que mantiene tu margen objetivo después de la comisión de cada app de delivery, para que tus precios en tienda, Uber Eats y DoorDash dejen ganancia.</p></details>
+      <details><summary>¿Tengo que escribir algo?</summary><p>No. Toma una foto del recibo o la factura y Margino lee los productos por ti. Verás una pantalla para revisar antes de guardar.</p></details>
+      <details><summary>¿Cuánto cuesta empezar?</summary><p>Es gratis para empezar: 10 recibos al mes, sin tarjeta de crédito. Sube de plan desde la app cuando necesites más.</p></details>
+      <details><summary>¿La app está en español?</summary><p>La versión en español llega con la próxima actualización, en los próximos días. Margino usará automáticamente el idioma de tu iPhone.</p></details>
+      <details><summary>¿En qué dispositivos funciona?</summary><p>Margino es una app para iPhone, disponible en el App Store en 175 países.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="wrap">
+  <div class="cta-band">
+    <h2>Deja de adivinar tus márgenes.</h2>
+    <p>Toma foto de tu próximo recibo y ve tus precios con ganancia en segundos.</p>
+    <a class="btn btn-primary" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX">Descarga Margino, gratis</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div>© 2026 Margino · Cemal Yılmaz</div>
+    <div class="links">
+      <a href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX">App Store</a>
+      <a href="/privacy-es.html">Privacidad</a>
+      <a href="/terms-es.html">Términos</a>
+      <a href="/account-deletion.html">Borrar mis datos</a>
+      <a href="mailto:support@usemargino.com">Contacto</a>
+      <a href="/" hreflang="en" lang="en">English</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

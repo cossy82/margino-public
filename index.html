@@ -6,6 +6,10 @@
 <title>Margino — Know what to charge on DoorDash, UberEats & in-store</title>
 <meta name="description" content="Snap a supplier receipt. Margino reads every cost and tells you the price that protects your margin on DoorDash, UberEats, and in-store.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="alternate" hreflang="en" href="https://usemargino.com/">
+<link rel="alternate" hreflang="es" href="https://usemargino.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://usemargino.com/">
+<link rel="canonical" href="https://usemargino.com/">
 
 <!-- Open Graph / social preview -->
 <meta property="og:type" content="website">
@@ -134,6 +138,11 @@
     .hero{padding:48px 0 36px}
     section.block{padding:48px 0}
   }
+
+  .lang{font-weight:600;font-size:14px;color:var(--muted);border:1.5px solid var(--line);border-radius:999px;padding:6px 12px}
+  .lang:hover{border-color:var(--navy);color:var(--navy)}
+  .notice{background:var(--gold-soft);color:var(--navy);font-size:14px;text-align:center;padding:10px 16px;font-weight:500}
+  .hero-visual img.tall{width:auto;max-width:100%;max-height:560px;margin:0 auto;box-shadow:none;border-radius:16px}
 </style>
 </head>
 <body>
@@ -141,12 +150,21 @@
 <nav>
   <div class="wrap">
     <a class="brand" href="/"><img src="assets/logo.png" alt="Margino logo">Margino</a>
-    <div style="display:flex;align-items:center;gap:22px">
+    <div style="display:flex;align-items:center;gap:14px">
       <a href="/blog/" style="font-weight:600;color:var(--navy);font-size:15px">Blog</a>
+      <a class="lang" href="/es/" hreflang="es" lang="es">Español</a>
       <a class="btn btn-primary" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556">Get the app</a>
     </div>
   </div>
 </nav>
+<div class="notice" id="es-hint" hidden lang="es">¿Prefieres español? <a href="/es/" style="font-weight:700;text-decoration:underline">Ver Margino en español →</a></div>
+<script>
+  // Spanish-language browsers get a one-line pointer to /es/ (no forced redirect).
+  try {
+    var langs = navigator.languages || [navigator.language || ''];
+    if (String(langs[0] || '').toLowerCase().indexOf('es') === 0) document.getElementById('es-hint').hidden = false;
+  } catch (e) {}
+</script>
 
 <!-- HERO -->
 <header class="hero">
@@ -315,7 +333,8 @@
       <a href="terms-en.html">Terms</a>
       <a href="terms-es.html">Términos (ES)</a>
       <a href="account-deletion.html">Data deletion</a>
-      <a href="mailto:cemalyilmazsmmm@gmail.com">Contact</a>
+      <a href="mailto:support@usemargino.com">Contact</a>
+      <a href="/es/" hreflang="es" lang="es">Español</a>
     </div>
   </div>
 </footer>
