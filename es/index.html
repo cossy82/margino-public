@@ -185,6 +185,7 @@
   .hero-visual img.tall{width:auto;max-width:100%;max-height:560px;margin:0 auto;box-shadow:none;border-radius:16px}
   /* HERO GALLERY: swipe only, no autoplay */
   .hero-visual.gallery{padding:22px 0 16px;position:relative;min-width:0}
+  @media(max-width:860px){.hero-visual.gallery{display:block}} /* phone: strip sits below the first-screen price card */
   .g-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:22px;padding-left:22px;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
   .g-track::-webkit-scrollbar{display:none}
   .g-track::after{content:"";flex:0 0 8px}
@@ -236,7 +237,7 @@
     </div>
     <div class="hero-visual gallery" role="region" aria-roledescription="carousel" aria-label="Pantallas de la app Margino">
       <div class="g-track" tabindex="0">
-        <figure class="g-slide"><img src="/assets/gallery/es/2_prices.webp" width="600" height="1300" fetchpriority="high" alt="Detecta cada alza de tu proveedor: precios para tienda, Uber Eats y DoorDash de cada producto, con aviso cuando un proveedor sube el costo"></figure>
+        <figure class="g-slide"><img src="/assets/gallery/es/2_prices.webp" width="600" height="1300" alt="Detecta cada alza de tu proveedor: precios para tienda, Uber Eats y DoorDash de cada producto, con aviso cuando un proveedor sube el costo"></figure>
         <figure class="g-slide"><img src="/assets/gallery/es/4_margins.webp" width="600" height="1300" alt="Mira el margen que de verdad te queda: costo por porción y margen en cada canal de cada platillo, en rojo cuando un precio del menú no alcanza"></figure>
         <figure class="g-slide"><img src="/assets/gallery/es/3_dish.webp" width="600" height="1300" loading="lazy" alt="Costea cada platillo por porción, con los precios reales de tus recibos"></figure>
         <figure class="g-slide"><img src="/assets/gallery/es/1_home.webp" width="600" height="1300" loading="lazy" alt="Sabe cuánto cobrar en cada canal: gasto con proveedores de los últimos 30 días y tus precios, con comisiones incluidas"></figure>

@@ -184,6 +184,7 @@
   .hero-visual img.tall{width:auto;max-width:100%;max-height:560px;margin:0 auto;box-shadow:none;border-radius:16px}
   /* HERO GALLERY: swipe only, no autoplay */
   .hero-visual.gallery{padding:22px 0 16px;position:relative;min-width:0}
+  @media(max-width:860px){.hero-visual.gallery{display:block}} /* phone: strip sits below the first-screen price card */
   .g-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:22px;padding-left:22px;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
   .g-track::-webkit-scrollbar{display:none}
   .g-track::after{content:"";flex:0 0 8px}
@@ -244,7 +245,7 @@
     </div>
     <div class="hero-visual gallery" role="region" aria-roledescription="carousel" aria-label="Margino app screens">
       <div class="g-track" tabindex="0">
-        <figure class="g-slide"><img src="/assets/gallery/en/2_prices.webp" width="600" height="1300" fetchpriority="high" alt="Catch every supplier price hike: in-store, Uber Eats and DoorDash prices for each item, with an alert when a supplier raises the cost"></figure>
+        <figure class="g-slide"><img src="/assets/gallery/en/2_prices.webp" width="600" height="1300" alt="Catch every supplier price hike: in-store, Uber Eats and DoorDash prices for each item, with an alert when a supplier raises the cost"></figure>
         <figure class="g-slide"><img src="/assets/gallery/en/4_margins.webp" width="600" height="1300" alt="See the margin you really keep: cost per portion and margin on each channel for every dish, in red when a menu price falls short"></figure>
         <figure class="g-slide"><img src="/assets/gallery/en/3_dish.webp" width="600" height="1300" loading="lazy" alt="Cost every dish per portion, built from the prices on your receipts"></figure>
         <figure class="g-slide"><img src="/assets/gallery/en/1_home.webp" width="600" height="1300" loading="lazy" alt="Know what to charge on every channel: supplier spend for the last 30 days and your prices, fees included"></figure>
