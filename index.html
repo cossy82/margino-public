@@ -173,6 +173,14 @@
     .sticky-cta .store-badge img{height:44px}
     body{padding-bottom:76px}
   }
+  /* Phone first screen: ad visitors never scroll (PostHog 29 Sep: 0% scroll,
+     median 15 s) — the product has to be visible without scrolling. */
+  .hero-shot{display:none}
+  @media(max-width:860px){
+    .hero-shot{display:block;width:100%;height:auto;border-radius:16px;margin:2px 0 16px;box-shadow:0 14px 34px -14px rgba(27,42,74,.45)}
+    .hero-visual{display:none}
+    .hero .btn-ghost,.hero .free-note{display:none}
+  }
   .hero-visual img.tall{width:auto;max-width:100%;max-height:560px;margin:0 auto;box-shadow:none;border-radius:16px}
   /* HERO GALLERY: swipe only, no autoplay */
   .hero-visual.gallery{padding:22px 0 16px;position:relative;min-width:0}
@@ -225,8 +233,9 @@
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">Smart Profit for food merchants</span>
-      <h1>Know exactly what to charge on <span class="hl">DoorDash, UberEats &amp; in-store.</span></h1>
-      <p class="lead">Snap your supplier receipt. Margino reads every item and gives you the price that protects your margin — in-store, on Uber Eats and DoorDash.</p>
+      <h1>Costs creeping up <span class="hl">every week?</span></h1>
+      <p class="lead">Snap a supplier receipt. Margino shows what to charge in-store, on Uber Eats and DoorDash, so you keep your margin on every sale.</p>
+      <img class="hero-shot" src="/assets/hero/en-prices.webp" width="720" height="473" fetchpriority="high" alt="Ground Beef cost up 11% since the last receipt, with the price to charge in-store ($61.49), on Uber Eats ($87.99) and DoorDash ($81.99)">
       <div class="cta-row">
         <a class="store-badge" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556"><img src="/assets/app-store-badge.svg" alt="Download on the App Store"></a>
         <a class="btn btn-ghost" href="#how">See how it works</a>
