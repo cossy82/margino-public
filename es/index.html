@@ -167,6 +167,29 @@
     body{padding-bottom:76px}
   }
   .hero-visual img.tall{width:auto;max-width:100%;max-height:560px;margin:0 auto;box-shadow:none;border-radius:16px}
+  /* HERO GALLERY: swipe only, no autoplay */
+  .hero-visual.gallery{padding:22px 0 16px;position:relative;min-width:0}
+  .g-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:22px;padding-left:22px;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+  .g-track::-webkit-scrollbar{display:none}
+  .g-track::after{content:"";flex:0 0 8px}
+  .g-slide{flex:0 0 auto;width:min(76%,258px);scroll-snap-align:start;margin:0}
+  .hero-visual .g-slide img{width:100%;height:auto;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .g-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+  .g-dots button{width:8px;height:8px;border-radius:999px;border:0;padding:0;background:rgba(255,255,255,.35);cursor:pointer;transition:width .2s,background .2s}
+  .g-dots button[aria-current="true"]{width:22px;background:var(--gold)}
+  .g-arrow{display:none}
+  @media(hover:hover) and (pointer:fine){
+    .g-arrow{display:flex;position:absolute;top:calc(50% - 30px);width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--navy);align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer;z-index:2}
+    .g-arrow:hover{background:var(--gold-soft)}
+    .g-arrow.prev{left:10px}
+    .g-arrow.next{right:10px}
+    .g-arrow[hidden]{display:none}
+  }
+
+  .feat .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .feat .top .ic{margin:0}
+  .pill{font-size:12px;font-weight:700;letter-spacing:.02em;padding:4px 10px;border-radius:999px;background:var(--gold-soft);color:#6F560B}
+  .pill.soon{background:var(--navy-soft);color:var(--muted)}
 </style>
 </head>
 <body>
@@ -180,7 +203,6 @@
     </div>
   </div>
 </nav>
-<div class="notice">La app en español llega con la próxima actualización, en los próximos días.</div>
 
 <!-- HERO -->
 <header class="hero">
@@ -195,9 +217,16 @@
       </div>
       <p class="free-note">Empieza gratis: <b>sin tarjeta.</b></p>
     </div>
-    <div class="hero-visual">
-      <img class="tall" src="/assets/es-home.jpg" alt="Margino en español: gasto con proveedores y precios para tienda, Uber Eats y DoorDash">
-      <div class="cap">Entran tus costos → <b>salen precios con ganancia</b>, por plataforma.</div>
+    <div class="hero-visual gallery" role="region" aria-roledescription="carousel" aria-label="Pantallas de la app Margino">
+      <div class="g-track" tabindex="0">
+        <figure class="g-slide"><img src="/assets/gallery/es/2_prices.webp" width="600" height="1300" fetchpriority="high" alt="Detecta cada alza de tu proveedor: precios para tienda, Uber Eats y DoorDash de cada producto, con aviso cuando un proveedor sube el costo"></figure>
+        <figure class="g-slide"><img src="/assets/gallery/es/4_margins.webp" width="600" height="1300" alt="Mira el margen que de verdad te queda: costo por porción y margen en cada canal de cada platillo, en rojo cuando un precio del menú no alcanza"></figure>
+        <figure class="g-slide"><img src="/assets/gallery/es/3_dish.webp" width="600" height="1300" loading="lazy" alt="Costea cada platillo por porción, con los precios reales de tus recibos"></figure>
+        <figure class="g-slide"><img src="/assets/gallery/es/1_home.webp" width="600" height="1300" loading="lazy" alt="Sabe cuánto cobrar en cada canal: gasto con proveedores de los últimos 30 días y tus precios, con comisiones incluidas"></figure>
+      </div>
+      <button class="g-arrow prev" type="button" aria-label="Pantalla anterior" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="g-arrow next" type="button" aria-label="Pantalla siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+      <div class="g-dots"><button type="button" aria-label="Ver pantalla 1 de 4" aria-current="true"></button><button type="button" aria-label="Ver pantalla 2 de 4"></button><button type="button" aria-label="Ver pantalla 3 de 4"></button><button type="button" aria-label="Ver pantalla 4 de 4"></button></div>
     </div>
   </div>
 </header>
@@ -269,16 +298,16 @@
 <section class="block" id="roadmap">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Lo que viene</span>
-      <h2>Lo que estamos construyendo.</h2>
+      <span class="eyebrow">Novedades</span>
+      <h2>Lo nuevo en Margino 1.3, y lo que viene.</h2>
     </div>
     <div class="feat-grid">
-      <div class="feat"><div class="ic">🗺️</div><h3>Tu perfil de Google</h3><p>Publica los precios de tu menú en Google Maps y responde reseñas desde la app. <b>Planeado.</b></p></div>
-      <div class="feat"><div class="ic">🍔</div><h3>Costeo de platillos</h3><p>Combina ingredientes de tus recibos en un platillo y ve su costo por porción, el precio para cada canal y tu margen real con el precio de tu menú. <b>Próxima actualización.</b></p></div>
-      <div class="feat"><div class="ic">🇲🇽</div><h3>En español</h3><p>Margino en español, de la app a las alertas de precio. <b>Próxima actualización.</b></p></div>
-      <div class="feat"><div class="ic">🔔</div><h3>Alertas de los lunes</h3><p>Un aviso semanal cuando un proveedor sube un precio, para que ajustes tu menú antes de perder margen. <b>Próxima actualización.</b></p></div>
-      <div class="feat"><div class="ic">🥚</div><h3>Comparación de precios en EE. UU.</h3><p>Compara lo que pagas por básicos como huevo, pollo o leche con el precio promedio al público en EE. UU. (datos oficiales del BLS). <b>Próxima actualización.</b></p></div>
-      <div class="feat"><div class="ic">📍</div><h3>Más barato cerca</h3><p>Mientras más negocios escanean, verás dónde se compró el mismo producto más barato cerca de ti: solo nombres de proveedores, nunca quién lo compró. <b>Planeado.</b></p></div>
+      <div class="feat"><div class="top"><span class="ic">🍔</span><span class="pill">Nuevo en 1.3</span></div><h3>Costeo de platillos</h3><p>Combina ingredientes de tus recibos en un platillo y ve su costo por porción, el precio para cada canal y tu margen real con el precio de tu menú.</p></div>
+      <div class="feat"><div class="top"><span class="ic">🔔</span><span class="pill">Nuevo en 1.3</span></div><h3>Alertas de los lunes</h3><p>Un aviso semanal cuando un proveedor sube un precio, para que ajustes tu menú antes de perder margen.</p></div>
+      <div class="feat"><div class="top"><span class="ic">🥚</span><span class="pill">Nuevo en 1.3</span></div><h3>Comparación de precios en EE. UU.</h3><p>Compara lo que pagas por básicos como huevo, pollo o leche con el precio promedio al público en EE. UU. (datos oficiales del BLS).</p></div>
+      <div class="feat"><div class="top"><span class="ic">🇲🇽</span><span class="pill">Nuevo en 1.3</span></div><h3>En español</h3><p>Margino en español, de la app a las alertas de precio.</p></div>
+      <div class="feat"><div class="top"><span class="ic">📍</span><span class="pill">Disponible</span></div><h3>Más barato cerca</h3><p>Ve dónde se compró el mismo producto más barato cerca de ti: solo nombres de proveedores, nunca quién lo compró. Mejora mientras más negocios escanean.</p></div>
+      <div class="feat"><div class="top"><span class="ic">🗺️</span><span class="pill soon">Planeado</span></div><h3>Tu perfil de Google</h3><p>Publica los precios de tu menú en Google Maps y responde reseñas desde la app.</p></div>
     </div>
   </div>
 </section>
@@ -366,6 +395,41 @@
     var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
     if (a) posthog.capture('landing_app_store_click', {lang: document.documentElement.lang, label: (a.textContent || '').trim().slice(0, 40)});
   });
+</script>
+<script>
+  // Hero gallery: moves only when the visitor swipes/clicks. Dots and desktop arrows follow the scroll position.
+  (function () {
+    var g = document.querySelector('.gallery');
+    if (!g) return;
+    var track = g.querySelector('.g-track'), slides = track.querySelectorAll('.g-slide'), dots = g.querySelectorAll('.g-dots button');
+    var prev = g.querySelector('.g-arrow.prev'), next = g.querySelector('.g-arrow.next');
+    var cur = 0, deepest = 0, timer;
+    function go(i) { track.scrollTo({left: slides[i].offsetLeft - slides[0].offsetLeft, behavior: 'smooth'}); }
+    function sync() {
+      var step = slides[1].offsetLeft - slides[0].offsetLeft;
+      var i = Math.round(track.scrollLeft / step);
+      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 2) i = slides.length - 1;
+      cur = Math.max(0, Math.min(slides.length - 1, i));
+      for (var k = 0; k < dots.length; k++) dots[k].setAttribute('aria-current', k === cur ? 'true' : 'false');
+      prev.hidden = cur === 0;
+      next.hidden = cur === slides.length - 1;
+    }
+    track.addEventListener('scroll', function () {
+      sync();
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        // One event per new deepest slide: tells us how far visitors swipe.
+        if (cur > deepest) {
+          deepest = cur;
+          try { posthog.capture('landing_gallery_slide', {slide: cur + 1, of: slides.length, lang: document.documentElement.lang}); } catch (e) {}
+        }
+      }, 400);
+    }, {passive: true});
+    Array.prototype.forEach.call(dots, function (d, k) { d.addEventListener('click', function () { go(k); }); });
+    prev.addEventListener('click', function () { go(Math.max(0, cur - 1)); });
+    next.addEventListener('click', function () { go(Math.min(slides.length - 1, cur + 1)); });
+    sync();
+  })();
 </script>
 </body>
 </html>
