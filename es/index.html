@@ -150,6 +150,22 @@
     .lang{padding:5px 10px;font-size:13px}
     .brand{font-size:17px}
   }
+
+  .store-badge{display:inline-block;line-height:0}
+  .store-badge img{height:54px;width:auto;display:block}
+  .sticky-cta{display:none}
+  @media(max-width:860px){
+    .hero{padding:28px 0 32px}
+    .hero h1{font-size:30px;margin:10px 0}
+    .hero p.lead{font-size:16px;margin-bottom:18px}
+    .hero .eyebrow{display:none}
+    .sticky-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+    .sticky-cta .txt{font-size:13px;color:var(--ink);font-weight:600;line-height:1.3}
+    .sticky-cta .txt span{display:block;color:var(--muted);font-weight:500}
+    .sticky-cta .store-badge img{height:44px}
+    body{padding-bottom:76px}
+  }
   .hero-visual img.tall{width:auto;max-width:100%;max-height:560px;margin:0 auto;box-shadow:none;border-radius:16px}
 </style>
 </head>
@@ -172,9 +188,9 @@
     <div>
       <span class="eyebrow">Ganancia inteligente para negocios de comida</span>
       <h1>Sabe exactamente cuánto cobrar en <span class="hl">DoorDash, Uber Eats y en tienda.</span></h1>
-      <p class="lead">Toma una foto del recibo de tu proveedor. Margino lee cada renglón y te dice el precio que cuida tu margen en cada plataforma.</p>
+      <p class="lead">Toma foto del recibo de tu proveedor. Margino lee cada producto y te da el precio que cuida tu margen: en tienda, Uber Eats y DoorDash.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX">Descargar en el App Store</a>
+        <a class="store-badge" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX"><img src="/assets/app-store-badge.svg" alt="Descargar en el App Store"></a>
         <a class="btn btn-ghost" href="#como">Ver cómo funciona</a>
       </div>
       <p class="free-note">Empieza gratis: <b>sin tarjeta.</b></p>
@@ -185,6 +201,11 @@
     </div>
   </div>
 </header>
+
+<div class="sticky-cta">
+  <div class="txt">Margino — gratis en el App Store<span>Escanea un recibo y ve tus precios</span></div>
+  <a class="store-badge" href="https://apps.apple.com/us/app/margino-smart-profit/id6767698556?l=es-MX"><img src="/assets/app-store-badge.svg" alt="Descargar en el App Store"></a>
+</div>
 
 <!-- PROBLEM -->
 <section class="block problem">
