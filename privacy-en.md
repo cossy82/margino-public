@@ -52,7 +52,7 @@ We share your data with the following service providers solely to operate Margin
 | Google LLC | Global | Google OAuth, Sheets API (writing to your own sheet), Drive metadata | Google profile, encrypted refresh token |
 | Cloudflare, Inc. | USA (edge POPs are global) | App backend (Workers), queue processing, access logs | All request payloads (transient in RAM, no persistent storage) |
 | Supabase, Inc. | USA (us-east-1) | Postgres database (user records, parsed receipts, your product list, encrypted refresh token), Vault (key management) | Identity, contact, parsed receipt content, product list, encrypted refresh token |
-| PostHog, Inc. | USA | Product analytics (coming soon) | Anonymous events |
+| PostHog, Inc. | USA | Product analytics; anonymous website page views and App Store link clicks (no cookies) | Anonymous events |
 | RevenueCat, Inc. | USA | Subscription management (post-Apple approval) | Anonymous subscription state |
 
 **International transfers:** Data is transferred to the USA and other regions outside the EEA / Türkiye. These transfers are protected by Standard Contractual Clauses (SCCs) under each provider's Data Processing Agreement (DPA). Where we rely on consent for the transfer (e.g. KVKK Article 9), it is collected when you start using the App.

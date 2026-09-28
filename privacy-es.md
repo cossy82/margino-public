@@ -54,7 +54,7 @@ Compartimos sus datos con los siguientes proveedores de servicios únicamente pa
 | Google LLC | Global | Google OAuth, API de Sheets (escritura en su propio sheet), metadatos de Drive | Perfil de Google, token de actualización cifrado |
 | Cloudflare, Inc. | EE. UU. (los puntos de presencia son globales) | Backend de la Aplicación (Workers), procesamiento de colas, registros de acceso | Todas las cargas de solicitud (transitorias en RAM, sin almacenamiento persistente) |
 | Supabase, Inc. | EE. UU. (us-east-1) | Base de datos Postgres (registros de usuario, recibos procesados, su lista de productos, token de actualización cifrado), Vault (gestión de claves) | Identidad, contacto, contenido de recibos procesados, lista de productos, token de actualización cifrado |
-| PostHog, Inc. | EE. UU. | Analítica de producto (próximamente) | Eventos anónimos |
+| PostHog, Inc. | EE. UU. | Analítica de producto; visitas anónimas al sitio web y clics al App Store (sin cookies) | Eventos anónimos |
 | RevenueCat, Inc. | EE. UU. | Gestión de suscripciones (tras la aprobación de Apple) | Estado de suscripción anónimo |
 
 **Transferencias internacionales:** Los datos se transfieren a EE. UU. y a otras regiones fuera del EEE / Turquía. Estas transferencias están protegidas por Cláusulas Contractuales Tipo (SCC) en virtud del Acuerdo de Tratamiento de Datos (DPA) de cada proveedor. Cuando nos basamos en el consentimiento para la transferencia (p. ej., Artículo 9 de la KVKK), este se recopila al comenzar a usar la Aplicación.
