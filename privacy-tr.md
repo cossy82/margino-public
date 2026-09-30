@@ -7,7 +7,7 @@ permalink: /privacy-tr.html
 # Margino Gizlilik Politikası
 
 **Yürürlük tarihi:** 8 Mayıs 2026
-**Son güncelleme:** 29 Eylül 2026
+**Son güncelleme:** 30 Eylül 2026
 
 Bu Gizlilik Politikası, Margino mobil uygulamasını ("Uygulama") ve ilgili hizmetleri ("Hizmet") kullanırken kişisel verilerinizin nasıl toplandığını, kullanıldığını, saklandığını ve korunduğunu açıklar. 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında bilgilendirme niteliğindedir.
 
@@ -28,6 +28,7 @@ Uygulamayı kullandığınızda aşağıdaki veriler işlenir:
 | Hizmet Kullanımı | Yüklediğiniz fatura/makbuz görselleri (geçici), parse edilen satır bilgileri (satıcı, ürün, fiyat, toplam, KDV), ürün listeniz (ürün adı, tedarikçi, paket, son ve önceki birim maliyet), hedef kâr marjı ve teslimat uygulaması komisyon tercihleriniz, bağlarsanız Google Sheet ID'niz | Uygulama kullanımı |
 | Teknik/Cihaz | IP adresi, istek zaman damgası | Cloudflare erişim logları |
 | Bildirimler (isteğe bağlı) | Push bildirim token'ı ve uygulama dili — yalnızca bildirimlere izin verirseniz; haftalık tedarikçi maliyet uyarısı için | Uygulama (iOS) |
+| Square (isteğe bağlı) | Yalnız Square'i bağlarsanız: Square işletme kimliğiniz, şifrelenmiş erişim ve yenileme token'ları ve bir yemeği bağladığınızda okunan Square menü ürünleriniz (ad, varyasyon, fiyat). Bağlanan ürün kimliği ve menü fiyatı o yemekte saklanır | Square (OAuth) |
 | Faturalandırma (gelecekte) | RevenueCat abonelik durumu | App Store / Play Store |
 
 ## 3. İşleme Amaçları ve Hukuki Sebepler
@@ -40,6 +41,7 @@ Uygulamayı kullandığınızda aşağıdaki veriler işlenir:
 | Anonim bölgesel piyasa fiyatı kıyaslaması | Meşru menfaat (m.5/2/f) — kişi tanımlayıcı bilgi olmadan |
 | Ürün analitikleri (PostHog — kullanım metrikleri) | Açık rıza (uygulama içi onay alındığında) |
 | Hangi reklamlarımızın uygulama yüklemesi, kayıt ve aboneliğe dönüştüğünü ölçmek (Meta App Events) | Meşru menfaat (m.5/2/f) |
+| Yemeğin menü fiyatının Square menünüzden doldurulması — yalnız Square'i bağlarsanız | Sözleşmenin ifası (m.5/2/c) |
 
 ## 4. Veri Akışı ve Üçüncü Kişilere Aktarım
 
@@ -54,6 +56,7 @@ Uygulama, kişisel verilerinizi aşağıdaki hizmet sağlayıcılarla paylaşır
 | PostHog, Inc. | ABD | Ürün analitikleri (yakında etkin) | Anonim event'ler |
 | RevenueCat, Inc. | ABD | Abonelik yönetimi (Apple onayı sonrası) | Anonim abonelik durumu |
 | Meta Platforms, Inc. | ABD | Margino'nun kendi reklamlarının ölçümü (Meta App Events SDK) | Uygulama olayları (yükleme, ilk giriş, ilk fiş, fiyat ve para birimiyle abonelik), cihaz ve uygulama bilgisi (model, işletim sistemi ve uygulama sürümü, dil, saat dilimi), IP adresi. Adınız, e-postanız, fişleriniz veya ürün listeniz asla gönderilmez. |
+| Block, Inc. (Square) | ABD | İsteğe bağlı Square POS bağlantısı (OAuth, Catalog API) | OAuth token'larını Square ile değiş tokuş ederiz ve Square menünüzdeki ürün ve fiyatları okuruz. Fişlerinizi, maliyetlerinizi veya ürün listenizi Square'e asla göndermeyiz. |
 
 **Yurt dışına aktarım:** KVKK m.9 kapsamında, ABD ve Global hizmet sağlayıcılara aktarım, Standard Contractual Clauses (SCC) ve hizmet sağlayıcıların DPA (Data Processing Agreement) çerçevesinde gerçekleşir. KVKK kapsamında yurt dışına aktarıma açık rızanız Uygulamayı kullanmaya başlamakla alınmış sayılır.
 
@@ -68,6 +71,7 @@ Margino sizi başka şirketlerin uygulama ve web sitelerinde izlemez. Uygulama �
 | Şifrelenmiş refresh token (Supabase) | Hesap aktif olduğu sürece; hesap silinmesinde anında silinir |
 | Kullanıcı kayıt verisi (Supabase users tablosu) | Hesap aktif olduğu sürece; hesap silinmesinde cascade delete |
 | Receipt log (zaman damgası, başarı/başarısızlık) | Hesap aktif olduğu sürece; cascade delete |
+| Square bağlantısı (işletme kimliği, şifreli token'lar) | Ayarlar'dan Square bağlantısını kesene veya hesabınızı silene kadar; bağlantıyı kesince Square'deki erişimimiz de iptal edilir |
 | Cloudflare erişim logları | Cloudflare default 30 gün |
 | Anonim regional benchmark | Süresiz (kişi tanımlayıcı bilgi yok, geri silinemez) |
 

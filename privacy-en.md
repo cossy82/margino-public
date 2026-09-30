@@ -7,7 +7,7 @@ permalink: /privacy-en.html
 # Margino Privacy Policy
 
 **Effective date:** 8 May 2026
-**Last updated:** 29 September 2026
+**Last updated:** 30 September 2026
 
 This Privacy Policy explains how Margino ("App", "Service") collects, uses, stores, and protects your personal data. It is provided in compliance with the EU General Data Protection Regulation (GDPR) and Türkiye's Personal Data Protection Law (KVKK).
 
@@ -30,6 +30,7 @@ When you use the App, we process the following data:
 | Service Usage | Receipt/invoice images you upload (transient), parsed line items (vendor, items, prices, totals, tax), your product list (product names, suppliers, pack sizes, latest and previous unit cost), your target profit margin and delivery-app commission preferences, your Google Sheet ID if you connect one | App use |
 | Technical / Device | IP address, request timestamp | Cloudflare access logs |
 | Notifications (optional) | Push notification token and app language, only if you allow notifications — used for the weekly supplier-cost alert | App (iOS) |
+| Square (optional) | Only if you connect Square: your Square merchant ID, encrypted access and refresh tokens, and the Square menu items (names, variations, prices) read when you link a dish. The linked item ID and its menu price are saved on that dish | Square (OAuth) |
 | Billing (future) | RevenueCat subscription state | App Store / Play Store |
 
 ## 3. Purposes and Legal Bases (GDPR Article 6)
@@ -42,6 +43,7 @@ When you use the App, we process the following data:
 | Anonymous regional price benchmarking | Legitimate interest (Art. 6(1)(f)) — no user identifier attached |
 | Product analytics (PostHog — usage metrics) | Consent (Art. 6(1)(a)) — collected via in-app consent |
 | Measuring which of our ads lead to app installs, sign-ups and subscriptions (Meta App Events) | Legitimate interest (Art. 6(1)(f)) |
+| Filling a dish's menu price from your Square menu — only if you connect Square | Performance of contract (Art. 6(1)(b)) |
 
 ## 4. Data Flow and Third-Party Recipients
 
@@ -56,6 +58,7 @@ We share your data with the following service providers solely to operate Margin
 | PostHog, Inc. | USA | Product analytics; anonymous website page views and App Store link clicks (no cookies) | Anonymous events |
 | RevenueCat, Inc. | USA | Subscription management (post-Apple approval) | Anonymous subscription state |
 | Meta Platforms, Inc. | USA | Measuring Margino's own ads (Meta App Events SDK) | App events (install, first sign-in, first receipt, subscription with price and currency), device and app information (model, OS and app version, language, time zone), IP address. Never your name, e-mail, receipts or product list. |
+| Block, Inc. (Square) | USA | Optional Square POS connection (OAuth, Catalog API) | We exchange the OAuth tokens with Square and read your Square menu items and prices. We never send Square your receipts, costs or product list. |
 
 **International transfers:** Data is transferred to the USA and other regions outside the EEA / Türkiye. These transfers are protected by Standard Contractual Clauses (SCCs) under each provider's Data Processing Agreement (DPA). Where we rely on consent for the transfer (e.g. KVKK Article 9), it is collected when you start using the App.
 
@@ -70,6 +73,7 @@ Margino does not track you across other companies' apps or websites. We do not a
 | Encrypted refresh token (Supabase) | While account is active; deleted immediately on account deletion |
 | User record (Supabase users table) | While account is active; cascade-deleted on account deletion |
 | Receipt log (timestamp, success/failure) | While account is active; cascade-deleted on account deletion |
+| Square connection (merchant ID, encrypted tokens) | Until you disconnect Square in Settings or delete your account; disconnecting also revokes our access at Square |
 | Cloudflare access logs | Cloudflare default 30 days |
 | Anonymous regional benchmarks | Indefinitely (no user identifier; cannot be traced back) |
 

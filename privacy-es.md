@@ -9,7 +9,7 @@ permalink: /privacy-es.html
 # Política de Privacidad de Margino
 
 **Fecha de entrada en vigor:** 8 de mayo de 2026
-**Última actualización:** 29 de septiembre de 2026
+**Última actualización:** 30 de septiembre de 2026
 
 Esta Política de Privacidad explica cómo Margino ("la Aplicación", "el Servicio") recopila, utiliza, almacena y protege sus datos personales. Se proporciona en cumplimiento del Reglamento General de Protección de Datos de la Unión Europea (GDPR) y de la Ley de Protección de Datos Personales de Turquía (KVKK).
 
@@ -32,6 +32,7 @@ Cuando usa la Aplicación, procesamos los siguientes datos:
 | Uso del Servicio | Imágenes de recibos/facturas que sube (transitorias), líneas de artículo extraídas (proveedor, artículos, precios, totales, impuestos), su lista de productos (nombres de productos, proveedores, tamaños de paquete, costo unitario más reciente y anterior), su margen de ganancia objetivo y sus preferencias de comisión de apps de reparto, el ID de su Google Sheet si conecta uno | Uso de la Aplicación |
 | Técnico / Dispositivo | Dirección IP, marca de tiempo de la solicitud | Registros de acceso de Cloudflare |
 | Notificaciones (opcional) | Token de notificaciones push e idioma de la app, solo si permite las notificaciones — se usa para el aviso semanal de costos de proveedores | Aplicación (iOS) |
+| Square (opcional) | Solo si conecta Square: su ID de comercio de Square, tokens de acceso y de actualización cifrados, y los productos de su menú de Square (nombres, variantes, precios) que se leen al vincular un platillo. El ID del producto vinculado y su precio de menú se guardan en ese platillo | Square (OAuth) |
 | Facturación (futuro) | Estado de suscripción de RevenueCat | App Store / Play Store |
 
 ## 3. Finalidades y Bases Legales (Artículo 6 del GDPR)
@@ -44,6 +45,7 @@ Cuando usa la Aplicación, procesamos los siguientes datos:
 | Comparación anónima de precios regionales | Interés legítimo (Art. 6(1)(f)) — sin identificador de usuario asociado |
 | Analítica de producto (PostHog — métricas de uso) | Consentimiento (Art. 6(1)(a)) — recopilado mediante consentimiento dentro de la aplicación |
 | Medir qué anuncios nuestros generan instalaciones, registros y suscripciones (Meta App Events) | Interés legítimo (Art. 6(1)(f)) |
+| Completar el precio de menú de un platillo desde su menú de Square — solo si conecta Square | Ejecución del contrato (Art. 6(1)(b)) |
 
 ## 4. Flujo de Datos y Destinatarios Externos
 
@@ -58,6 +60,7 @@ Compartimos sus datos con los siguientes proveedores de servicios únicamente pa
 | PostHog, Inc. | EE. UU. | Analítica de producto; visitas anónimas al sitio web y clics al App Store (sin cookies) | Eventos anónimos |
 | RevenueCat, Inc. | EE. UU. | Gestión de suscripciones (tras la aprobación de Apple) | Estado de suscripción anónimo |
 | Meta Platforms, Inc. | EE. UU. | Medición de los anuncios de Margino (SDK Meta App Events) | Eventos de la app (instalación, primer inicio de sesión, primer recibo, suscripción con precio y moneda), información del dispositivo y de la app (modelo, versión del sistema y de la app, idioma, zona horaria), dirección IP. Nunca su nombre, correo, recibos ni su lista de productos. |
+| Block, Inc. (Square) | EE. UU. | Conexión opcional con Square POS (OAuth, Catalog API) | Intercambiamos los tokens OAuth con Square y leemos los productos y precios de su menú de Square. Nunca enviamos a Square sus recibos, costos ni su lista de productos. |
 
 **Transferencias internacionales:** Los datos se transfieren a EE. UU. y a otras regiones fuera del EEE / Turquía. Estas transferencias están protegidas por Cláusulas Contractuales Tipo (SCC) en virtud del Acuerdo de Tratamiento de Datos (DPA) de cada proveedor. Cuando nos basamos en el consentimiento para la transferencia (p. ej., Artículo 9 de la KVKK), este se recopila al comenzar a usar la Aplicación.
 
@@ -72,6 +75,7 @@ Margino no le rastrea en apps ni sitios web de otras empresas. No pedimos el per
 | Token de actualización cifrado (Supabase) | Mientras la cuenta esté activa; se elimina de inmediato al eliminar la cuenta |
 | Registro de usuario (tabla users de Supabase) | Mientras la cuenta esté activa; se elimina en cascada al eliminar la cuenta |
 | Registro de recibos (marca de tiempo, éxito/fallo) | Mientras la cuenta esté activa; se elimina en cascada al eliminar la cuenta |
+| Conexión con Square (ID de comercio, tokens cifrados) | Hasta que desconecte Square en Ajustes o elimine su cuenta; al desconectar también revocamos nuestro acceso en Square |
 | Registros de acceso de Cloudflare | 30 días por defecto de Cloudflare |
 | Comparaciones regionales anónimas | Indefinidamente (sin identificador de usuario; no se puede rastrear) |
 
