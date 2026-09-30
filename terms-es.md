@@ -96,7 +96,7 @@ Estos Términos se rigen por las leyes de la **República de Turquía**. Cualqui
 
 Para preguntas sobre estos Términos o sobre Margino:
 
-- **Correo electrónico:** [cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com) (support@margino.us cuando el dominio esté activo)
+- **Correo electrónico:** [support@usemargino.com](mailto:support@usemargino.com)
 - **Desarrollador:** Cemal Yılmaz (empresario individual, Estambul, Turquía)
 
 ---

@@ -24,7 +24,7 @@ You can delete your Margino account and all associated personal data at any time
 
 ### Option 2 — Email request (if you can't access the app)
 
-Email **[cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com)** from the email address associated with your Margino account.
+Email **[support@usemargino.com](mailto:support@usemargino.com)** from the email address associated with your Margino account.
 
 Subject: `Margino account deletion request`
 
@@ -68,7 +68,7 @@ Margino hesabınızı ve ilişkili tüm kişisel verilerinizi istediğiniz zaman
 
 ### Seçenek 2 — E-posta ile talep (uygulamaya erişemiyorsanız)
 
-Margino hesabınızla ilişkili e-posta adresinden **[cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com)** adresine yazın.
+Margino hesabınızla ilişkili e-posta adresinden **[support@usemargino.com](mailto:support@usemargino.com)** adresine yazın.
 
 Konu: `Margino hesap silme talebi`
 
@@ -82,6 +82,6 @@ Konu: `Margino hesap silme talebi`
 
 ## Contact / İletişim
 
-📧 [cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com)
+📧 [support@usemargino.com](mailto:support@usemargino.com)
 🔒 [Privacy Policy (English)](privacy-en.html) / [Gizlilik Politikası (Türkçe)](privacy-tr.html)
 🏠 [Home](/)

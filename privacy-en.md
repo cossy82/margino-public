@@ -15,7 +15,7 @@ This Privacy Policy explains how Margino ("App", "Service") collects, uses, stor
 
 **Cemal Yılmaz**, sole proprietor registered in Türkiye.
 
-Contact: [cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com)
+Contact: [support@usemargino.com](mailto:support@usemargino.com)
 
 We have not appointed a Data Protection Officer (DPO) — Margino's processing volume and risk profile do not meet the GDPR Article 37 thresholds. The Data Controller above is the point of contact for all data subject requests.
 
@@ -90,7 +90,7 @@ You have the following rights regarding your personal data:
 - **Right to withdraw consent** (Art. 7(3)): for any processing relying on consent
 - **Right to lodge a complaint**: with the Türkiye KVKK Authority (kvkk.gov.tr) or your local EU Data Protection Authority
 
-To exercise any of these rights, email [cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com). We respond within 30 days (GDPR Article 12(3)).
+To exercise any of these rights, email [support@usemargino.com](mailto:support@usemargino.com). We respond within 30 days (GDPR Article 12(3)).
 
 ## 7. Children's Data
 
@@ -111,4 +111,4 @@ When we update this policy, the "Last updated" date changes and we notify you in
 
 Reach the Data Controller (Cemal Yılmaz) at:
 
-📧 [cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com)
+📧 [support@usemargino.com](mailto:support@usemargino.com)

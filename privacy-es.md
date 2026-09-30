@@ -17,7 +17,7 @@ Esta Política de Privacidad explica cómo Margino ("la Aplicación", "el Servic
 
 **Cemal Yılmaz**, empresario individual registrado en Turquía.
 
-Contacto: [cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com)
+Contacto: [support@usemargino.com](mailto:support@usemargino.com)
 
 No hemos designado un Delegado de Protección de Datos (DPO): el volumen y el perfil de riesgo del tratamiento de datos de Margino no alcanzan los umbrales del Artículo 37 del GDPR. El Responsable del Tratamiento indicado arriba es el punto de contacto para todas las solicitudes de los titulares de los datos.
 
@@ -92,7 +92,7 @@ Usted tiene los siguientes derechos respecto a sus datos personales:
 - **Derecho a retirar el consentimiento** (Art. 7(3)): para cualquier tratamiento basado en consentimiento
 - **Derecho a presentar una reclamación**: ante la Autoridad KVKK de Turquía (kvkk.gov.tr) o ante su Autoridad de Protección de Datos local en la UE
 
-Para ejercer cualquiera de estos derechos, escriba a [cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com). Respondemos en un plazo de 30 días (Artículo 12(3) del GDPR).
+Para ejercer cualquiera de estos derechos, escriba a [support@usemargino.com](mailto:support@usemargino.com). Respondemos en un plazo de 30 días (Artículo 12(3) del GDPR).
 
 ## 7. Datos de Menores
 
@@ -113,4 +113,4 @@ Cuando actualicemos esta política, la fecha de "Última actualización" cambiar
 
 Puede contactar al Responsable del Tratamiento (Cemal Yılmaz) en:
 
-📧 [cemalyilmazsmmm@gmail.com](mailto:cemalyilmazsmmm@gmail.com)
+📧 [support@usemargino.com](mailto:support@usemargino.com)
