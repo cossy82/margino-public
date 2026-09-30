@@ -9,7 +9,7 @@ permalink: /privacy-es.html
 # Política de Privacidad de Margino
 
 **Fecha de entrada en vigor:** 8 de mayo de 2026
-**Última actualización:** 27 de septiembre de 2026
+**Última actualización:** 29 de septiembre de 2026
 
 Esta Política de Privacidad explica cómo Margino ("la Aplicación", "el Servicio") recopila, utiliza, almacena y protege sus datos personales. Se proporciona en cumplimiento del Reglamento General de Protección de Datos de la Unión Europea (GDPR) y de la Ley de Protección de Datos Personales de Turquía (KVKK).
 
@@ -43,6 +43,7 @@ Cuando usa la Aplicación, procesamos los siguientes datos:
 | Prevención del uso indebido del servicio (límite de tasa, registros de errores) | Interés legítimo (Art. 6(1)(f)) |
 | Comparación anónima de precios regionales | Interés legítimo (Art. 6(1)(f)) — sin identificador de usuario asociado |
 | Analítica de producto (PostHog — métricas de uso) | Consentimiento (Art. 6(1)(a)) — recopilado mediante consentimiento dentro de la aplicación |
+| Medir qué anuncios nuestros generan instalaciones, registros y suscripciones (Meta App Events) | Interés legítimo (Art. 6(1)(f)) |
 
 ## 4. Flujo de Datos y Destinatarios Externos
 
@@ -56,8 +57,11 @@ Compartimos sus datos con los siguientes proveedores de servicios únicamente pa
 | Supabase, Inc. | EE. UU. (us-east-1) | Base de datos Postgres (registros de usuario, recibos procesados, su lista de productos, token de actualización cifrado), Vault (gestión de claves) | Identidad, contacto, contenido de recibos procesados, lista de productos, token de actualización cifrado |
 | PostHog, Inc. | EE. UU. | Analítica de producto; visitas anónimas al sitio web y clics al App Store (sin cookies) | Eventos anónimos |
 | RevenueCat, Inc. | EE. UU. | Gestión de suscripciones (tras la aprobación de Apple) | Estado de suscripción anónimo |
+| Meta Platforms, Inc. | EE. UU. | Medición de los anuncios de Margino (SDK Meta App Events) | Eventos de la app (instalación, primer inicio de sesión, primer recibo, suscripción con precio y moneda), información del dispositivo y de la app (modelo, versión del sistema y de la app, idioma, zona horaria), dirección IP. Nunca su nombre, correo, recibos ni su lista de productos. |
 
 **Transferencias internacionales:** Los datos se transfieren a EE. UU. y a otras regiones fuera del EEE / Turquía. Estas transferencias están protegidas por Cláusulas Contractuales Tipo (SCC) en virtud del Acuerdo de Tratamiento de Datos (DPA) de cada proveedor. Cuando nos basamos en el consentimiento para la transferencia (p. ej., Artículo 9 de la KVKK), este se recopila al comenzar a usar la Aplicación.
+
+Margino no le rastrea en apps ni sitios web de otras empresas. No pedimos el permiso de Transparencia de Seguimiento de Apps ni recopilamos el identificador publicitario de su dispositivo (IDFA/AAID). En iOS, SKAdNetwork de Apple le indica a Meta que una instalación vino de un anuncio sin identificarle.
 
 ## 5. Períodos de Conservación
 

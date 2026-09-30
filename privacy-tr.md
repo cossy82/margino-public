@@ -7,7 +7,7 @@ permalink: /privacy-tr.html
 # Margino Gizlilik Politikası
 
 **Yürürlük tarihi:** 8 Mayıs 2026
-**Son güncelleme:** 27 Eylül 2026
+**Son güncelleme:** 29 Eylül 2026
 
 Bu Gizlilik Politikası, Margino mobil uygulamasını ("Uygulama") ve ilgili hizmetleri ("Hizmet") kullanırken kişisel verilerinizin nasıl toplandığını, kullanıldığını, saklandığını ve korunduğunu açıklar. 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında bilgilendirme niteliğindedir.
 
@@ -39,6 +39,7 @@ Uygulamayı kullandığınızda aşağıdaki veriler işlenir:
 | Hizmet kötüye kullanımının önlenmesi (rate-limit, hata logları) | Meşru menfaat (m.5/2/f) |
 | Anonim bölgesel piyasa fiyatı kıyaslaması | Meşru menfaat (m.5/2/f) — kişi tanımlayıcı bilgi olmadan |
 | Ürün analitikleri (PostHog — kullanım metrikleri) | Açık rıza (uygulama içi onay alındığında) |
+| Hangi reklamlarımızın uygulama yüklemesi, kayıt ve aboneliğe dönüştüğünü ölçmek (Meta App Events) | Meşru menfaat (m.5/2/f) |
 
 ## 4. Veri Akışı ve Üçüncü Kişilere Aktarım
 
@@ -52,8 +53,11 @@ Uygulama, kişisel verilerinizi aşağıdaki hizmet sağlayıcılarla paylaşır
 | Supabase, Inc. | ABD (us-east-1) | Postgres veritabanı (kullanıcı kayıtları, parse edilmiş faturalar, ürün listeniz, şifrelenmiş refresh token), Vault (anahtar yönetimi) | Kimlik, iletişim, fatura içeriği, ürün listesi, refresh token (şifreli) |
 | PostHog, Inc. | ABD | Ürün analitikleri (yakında etkin) | Anonim event'ler |
 | RevenueCat, Inc. | ABD | Abonelik yönetimi (Apple onayı sonrası) | Anonim abonelik durumu |
+| Meta Platforms, Inc. | ABD | Margino'nun kendi reklamlarının ölçümü (Meta App Events SDK) | Uygulama olayları (yükleme, ilk giriş, ilk fiş, fiyat ve para birimiyle abonelik), cihaz ve uygulama bilgisi (model, işletim sistemi ve uygulama sürümü, dil, saat dilimi), IP adresi. Adınız, e-postanız, fişleriniz veya ürün listeniz asla gönderilmez. |
 
 **Yurt dışına aktarım:** KVKK m.9 kapsamında, ABD ve Global hizmet sağlayıcılara aktarım, Standard Contractual Clauses (SCC) ve hizmet sağlayıcıların DPA (Data Processing Agreement) çerçevesinde gerçekleşir. KVKK kapsamında yurt dışına aktarıma açık rızanız Uygulamayı kullanmaya başlamakla alınmış sayılır.
+
+Margino sizi başka şirketlerin uygulama ve web sitelerinde izlemez. Uygulama İzleme Şeffaflığı (ATT) izni istemiyoruz ve cihazınızın reklam kimliğini (IDFA/AAID) toplamıyoruz. iOS'ta Apple'ın SKAdNetwork'ü, bir yüklemenin reklamdan geldiğini sizi tanımlamadan Meta'ya bildirir.
 
 ## 5. Saklama Süreleri
 

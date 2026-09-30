@@ -7,7 +7,7 @@ permalink: /privacy-en.html
 # Margino Privacy Policy
 
 **Effective date:** 8 May 2026
-**Last updated:** 27 September 2026
+**Last updated:** 29 September 2026
 
 This Privacy Policy explains how Margino ("App", "Service") collects, uses, stores, and protects your personal data. It is provided in compliance with the EU General Data Protection Regulation (GDPR) and Türkiye's Personal Data Protection Law (KVKK).
 
@@ -41,6 +41,7 @@ When you use the App, we process the following data:
 | Preventing service abuse (rate-limit, error logs) | Legitimate interest (Art. 6(1)(f)) |
 | Anonymous regional price benchmarking | Legitimate interest (Art. 6(1)(f)) — no user identifier attached |
 | Product analytics (PostHog — usage metrics) | Consent (Art. 6(1)(a)) — collected via in-app consent |
+| Measuring which of our ads lead to app installs, sign-ups and subscriptions (Meta App Events) | Legitimate interest (Art. 6(1)(f)) |
 
 ## 4. Data Flow and Third-Party Recipients
 
@@ -54,8 +55,11 @@ We share your data with the following service providers solely to operate Margin
 | Supabase, Inc. | USA (us-east-1) | Postgres database (user records, parsed receipts, your product list, encrypted refresh token), Vault (key management) | Identity, contact, parsed receipt content, product list, encrypted refresh token |
 | PostHog, Inc. | USA | Product analytics; anonymous website page views and App Store link clicks (no cookies) | Anonymous events |
 | RevenueCat, Inc. | USA | Subscription management (post-Apple approval) | Anonymous subscription state |
+| Meta Platforms, Inc. | USA | Measuring Margino's own ads (Meta App Events SDK) | App events (install, first sign-in, first receipt, subscription with price and currency), device and app information (model, OS and app version, language, time zone), IP address. Never your name, e-mail, receipts or product list. |
 
 **International transfers:** Data is transferred to the USA and other regions outside the EEA / Türkiye. These transfers are protected by Standard Contractual Clauses (SCCs) under each provider's Data Processing Agreement (DPA). Where we rely on consent for the transfer (e.g. KVKK Article 9), it is collected when you start using the App.
+
+Margino does not track you across other companies' apps or websites. We do not ask for App Tracking Transparency permission and do not collect your device's advertising identifier (IDFA/AAID). On iOS, Apple's SKAdNetwork tells Meta that an install came from an ad without identifying you.
 
 ## 5. Retention Periods
 
