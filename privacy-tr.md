@@ -7,7 +7,7 @@ permalink: /privacy-tr.html
 # Margino Gizlilik Politikası
 
 **Yürürlük tarihi:** 8 Mayıs 2026
-**Son güncelleme:** 30 Eylül 2026
+**Son güncelleme:** 2 Ekim 2026
 
 Bu Gizlilik Politikası, Margino mobil uygulamasını ("Uygulama") ve ilgili hizmetleri ("Hizmet") kullanırken kişisel verilerinizin nasıl toplandığını, kullanıldığını, saklandığını ve korunduğunu açıklar. 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında bilgilendirme niteliğindedir.
 
@@ -27,7 +27,7 @@ Uygulamayı kullandığınızda aşağıdaki veriler işlenir:
 | İletişim | Google hesabınızla bağlı e-posta adresi | Google OAuth |
 | Hizmet Kullanımı | Yüklediğiniz fatura/makbuz görselleri (geçici), parse edilen satır bilgileri (satıcı, ürün, fiyat, toplam, KDV), ürün listeniz (ürün adı, tedarikçi, paket, son ve önceki birim maliyet), hedef kâr marjı ve teslimat uygulaması komisyon tercihleriniz, bağlarsanız Google Sheet ID'niz | Uygulama kullanımı |
 | Teknik/Cihaz | IP adresi, istek zaman damgası | Cloudflare erişim logları |
-| Bildirimler (isteğe bağlı) | Push bildirim token'ı ve uygulama dili — yalnızca bildirimlere izin verirseniz; haftalık tedarikçi maliyet uyarısı için | Uygulama (iOS) |
+| Bildirimler (isteğe bağlı) | Push bildirim token'ı, uygulama dili ve cihazınızın saat dilimi farkı — yalnızca bildirimlere izin verirseniz; haftalık tedarikçi maliyet uyarısı ve bir sonraki faturanızı taramanız için sabah saatlerinde gönderilen hatırlatma için. İkisi de Ayarlar'dan kapatılabilir | Uygulama (iOS) |
 | Square (isteğe bağlı) | Yalnız Square'i bağlarsanız: Square işletme kimliğiniz, şifrelenmiş erişim ve yenileme token'ları ve bir yemeği bağladığınızda okunan Square menü ürünleriniz (ad, varyasyon, fiyat). Bağlanan ürün kimliği ve menü fiyatı o yemekte saklanır | Square (OAuth) |
 | Faturalandırma (gelecekte) | RevenueCat abonelik durumu | App Store / Play Store |
 

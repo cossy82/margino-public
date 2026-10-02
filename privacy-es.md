@@ -9,7 +9,7 @@ permalink: /privacy-es.html
 # Política de Privacidad de Margino
 
 **Fecha de entrada en vigor:** 8 de mayo de 2026
-**Última actualización:** 30 de septiembre de 2026
+**Última actualización:** 2 de octubre de 2026
 
 Esta Política de Privacidad explica cómo Margino ("la Aplicación", "el Servicio") recopila, utiliza, almacena y protege sus datos personales. Se proporciona en cumplimiento del Reglamento General de Protección de Datos de la Unión Europea (GDPR) y de la Ley de Protección de Datos Personales de Turquía (KVKK).
 
@@ -31,7 +31,7 @@ Cuando usa la Aplicación, procesamos los siguientes datos:
 | Contacto | Correo electrónico asociado a su cuenta de Google | Google OAuth |
 | Uso del Servicio | Imágenes de recibos/facturas que sube (transitorias), líneas de artículo extraídas (proveedor, artículos, precios, totales, impuestos), su lista de productos (nombres de productos, proveedores, tamaños de paquete, costo unitario más reciente y anterior), su margen de ganancia objetivo y sus preferencias de comisión de apps de reparto, el ID de su Google Sheet si conecta uno | Uso de la Aplicación |
 | Técnico / Dispositivo | Dirección IP, marca de tiempo de la solicitud | Registros de acceso de Cloudflare |
-| Notificaciones (opcional) | Token de notificaciones push e idioma de la app, solo si permite las notificaciones — se usa para el aviso semanal de costos de proveedores | Aplicación (iOS) |
+| Notificaciones (opcional) | Token de notificaciones push, idioma de la app y la diferencia horaria de su dispositivo, solo si permite las notificaciones — se usa para el aviso semanal de costos de proveedores y para un recordatorio de escanear su próxima factura, enviado a media mañana en su hora local. Ambos se pueden desactivar en Ajustes | Aplicación (iOS) |
 | Square (opcional) | Solo si conecta Square: su ID de comercio de Square, tokens de acceso y de actualización cifrados, y los productos de su menú de Square (nombres, variantes, precios) que se leen al vincular un platillo. El ID del producto vinculado y su precio de menú se guardan en ese platillo | Square (OAuth) |
 | Facturación (futuro) | Estado de suscripción de RevenueCat | App Store / Play Store |
 

@@ -7,7 +7,7 @@ permalink: /privacy-en.html
 # Margino Privacy Policy
 
 **Effective date:** 8 May 2026
-**Last updated:** 30 September 2026
+**Last updated:** 2 October 2026
 
 This Privacy Policy explains how Margino ("App", "Service") collects, uses, stores, and protects your personal data. It is provided in compliance with the EU General Data Protection Regulation (GDPR) and Türkiye's Personal Data Protection Law (KVKK).
 
@@ -29,7 +29,7 @@ When you use the App, we process the following data:
 | Contact | Email associated with your Google account | Google OAuth |
 | Service Usage | Receipt/invoice images you upload (transient), parsed line items (vendor, items, prices, totals, tax), your product list (product names, suppliers, pack sizes, latest and previous unit cost), your target profit margin and delivery-app commission preferences, your Google Sheet ID if you connect one | App use |
 | Technical / Device | IP address, request timestamp | Cloudflare access logs |
-| Notifications (optional) | Push notification token and app language, only if you allow notifications — used for the weekly supplier-cost alert | App (iOS) |
+| Notifications (optional) | Push notification token, app language and your device's time zone offset, only if you allow notifications — used for the weekly supplier-cost alert and for a reminder to scan your next invoice, sent mid-morning your time. Either can be switched off in Settings | App (iOS) |
 | Square (optional) | Only if you connect Square: your Square merchant ID, encrypted access and refresh tokens, and the Square menu items (names, variations, prices) read when you link a dish. The linked item ID and its menu price are saved on that dish | Square (OAuth) |
 | Billing (future) | RevenueCat subscription state | App Store / Play Store |
 
