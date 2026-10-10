@@ -21,6 +21,7 @@ You can delete your Margino account and all associated personal data at any time
 **What is NOT deleted automatically:**
 - Your **own Google Sheet** — you own it. Delete it from your Google Drive if you want it removed.
 - **Anonymous regional benchmarks** — once aggregated, they have no link back to you and cannot be traced/deleted individually (our Privacy Policy §5).
+- **A count that an account was deleted** — how long it existed, its plan, how many receipts, products and dishes it held, the country the request came from, and the reason if you chose one in the app. No user ID, name, e-mail or IP address is kept with it.
 
 ### Option 2 — Email request (if you can't access the app)
 
@@ -43,9 +44,10 @@ We respond within **30 days** (typically within 1-3 business days). Deletion is 
 | Refresh token rotation log | ✅ Yes | Supabase `refresh_token_jti` |
 | Receipt processing log (timestamps, success/fail counters) | ✅ Yes | Supabase `receipt_log` |
 | Receipt images | N/A | Never persisted in the first place; deleted seconds after parsing |
-| Parsed receipt content (vendor/items/prices) | N/A | Never on our servers — lives in your own Google Sheet |
+| Parsed receipt content, your product list and your dishes | ✅ Yes | Supabase (deleted with the account). A copy in your own Google Sheet, if you connected one, stays yours |
 | Your Google Sheet | ❌ No (you control it) | Delete manually from Google Drive |
 | Anonymous regional benchmarks | ❌ No (irreversibly aggregated) | No user identifier; can't trace |
+| Count that an account was deleted (age, plan, number of receipts / products / dishes, country, optional reason) | ❌ No | No user ID, name, e-mail or IP address; can't trace |
 | Cloudflare access logs (IP + timestamp) | ⏳ 30 days | Cloudflare default rolling window |
 
 ---
@@ -65,6 +67,7 @@ Margino hesabınızı ve ilişkili tüm kişisel verilerinizi istediğiniz zaman
 **Otomatik silinmeyen:**
 - **Kendi Google Sheet'iniz** — onun sahibi sizsiniz. Silmek isterseniz Google Drive'ınızdan elinizle silin.
 - **Anonim bölgesel benchmark'lar** — toplu hale geldiğinde sizinle bağlantısı kalmaz, geri tek tek silinemez (Gizlilik Politikamız §5).
+- **Bir hesabın silindiğine dair sayım kaydı** — hesabın ne kadar süre var olduğu, planı, kaç fiş, ürün ve yemek içerdiği, isteğin geldiği ülke ve uygulamada seçtiyseniz silme nedeni. Yanında kullanıcı kimliği, isim, e-posta veya IP adresi tutulmaz.
 
 ### Seçenek 2 — E-posta ile talep (uygulamaya erişemiyorsanız)
 

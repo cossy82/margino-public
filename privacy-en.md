@@ -7,7 +7,7 @@ permalink: /privacy-en.html
 # Margino Privacy Policy
 
 **Effective date:** 8 May 2026
-**Last updated:** 2 October 2026
+**Last updated:** 10 October 2026
 
 This Privacy Policy explains how Margino ("App", "Service") collects, uses, stores, and protects your personal data. It is provided in compliance with the EU General Data Protection Regulation (GDPR) and Türkiye's Personal Data Protection Law (KVKK).
 
@@ -76,6 +76,7 @@ Margino does not track you across other companies' apps or websites. We do not a
 | Square connection (merchant ID, encrypted tokens) | Until you disconnect Square in Settings or delete your account; disconnecting also revokes our access at Square |
 | Cloudflare access logs | Cloudflare default 30 days |
 | Anonymous regional benchmarks | Indefinitely (no user identifier; cannot be traced back) |
+| A record that an account was deleted: how long it existed, its plan, how many receipts, products and dishes it held, the country the request came from, and the reason if you chose one | Indefinitely (kept as a count only — no user identifier, name, e-mail or IP address; cannot be traced back) |
 
 ## 6. Your Rights (GDPR Articles 15–22)
 

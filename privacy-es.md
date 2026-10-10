@@ -9,7 +9,7 @@ permalink: /privacy-es.html
 # Política de Privacidad de Margino
 
 **Fecha de entrada en vigor:** 8 de mayo de 2026
-**Última actualización:** 2 de octubre de 2026
+**Última actualización:** 10 de octubre de 2026
 
 Esta Política de Privacidad explica cómo Margino ("la Aplicación", "el Servicio") recopila, utiliza, almacena y protege sus datos personales. Se proporciona en cumplimiento del Reglamento General de Protección de Datos de la Unión Europea (GDPR) y de la Ley de Protección de Datos Personales de Turquía (KVKK).
 
@@ -78,6 +78,7 @@ Margino no le rastrea en apps ni sitios web de otras empresas. No pedimos el per
 | Conexión con Square (ID de comercio, tokens cifrados) | Hasta que desconecte Square en Ajustes o elimine su cuenta; al desconectar también revocamos nuestro acceso en Square |
 | Registros de acceso de Cloudflare | 30 días por defecto de Cloudflare |
 | Comparaciones regionales anónimas | Indefinidamente (sin identificador de usuario; no se puede rastrear) |
+| Un registro de que se eliminó una cuenta: cuánto tiempo existió, su plan, cuántos recibos, productos y platillos tenía, el país desde el que llegó la solicitud y el motivo, si eligió uno | Indefinidamente (se conserva solo como conteo — sin identificador de usuario, nombre, correo ni dirección IP; no se puede rastrear) |
 
 ## 6. Sus Derechos (Artículos 15 a 22 del GDPR)
 

@@ -7,7 +7,7 @@ permalink: /privacy-tr.html
 # Margino Gizlilik Politikası
 
 **Yürürlük tarihi:** 8 Mayıs 2026
-**Son güncelleme:** 2 Ekim 2026
+**Son güncelleme:** 10 Ekim 2026
 
 Bu Gizlilik Politikası, Margino mobil uygulamasını ("Uygulama") ve ilgili hizmetleri ("Hizmet") kullanırken kişisel verilerinizin nasıl toplandığını, kullanıldığını, saklandığını ve korunduğunu açıklar. 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında bilgilendirme niteliğindedir.
 
@@ -74,6 +74,7 @@ Margino sizi başka şirketlerin uygulama ve web sitelerinde izlemez. Uygulama �
 | Square bağlantısı (işletme kimliği, şifreli token'lar) | Ayarlar'dan Square bağlantısını kesene veya hesabınızı silene kadar; bağlantıyı kesince Square'deki erişimimiz de iptal edilir |
 | Cloudflare erişim logları | Cloudflare default 30 gün |
 | Anonim regional benchmark | Süresiz (kişi tanımlayıcı bilgi yok, geri silinemez) |
+| Bir hesabın silindiğine dair kayıt: hesabın ne kadar süre var olduğu, planı, kaç fiş, ürün ve yemek içerdiği, isteğin geldiği ülke ve seçtiyseniz silme nedeni | Süresiz (yalnızca sayım olarak tutulur — kullanıcı kimliği, isim, e-posta veya IP adresi yok; kişiye geri bağlanamaz) |
 
 ## 6. KVKK m.11 Kapsamında Haklarınız
 
