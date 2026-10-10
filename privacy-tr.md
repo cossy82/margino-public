@@ -25,7 +25,7 @@ Uygulamayı kullandığınızda aşağıdaki veriler işlenir:
 |---|---|---|
 | Kimlik | Google hesap kimliği (sub), ad, profil resmi | Google OAuth |
 | İletişim | Google hesabınızla bağlı e-posta adresi | Google OAuth |
-| Hizmet Kullanımı | Yüklediğiniz fatura/makbuz görselleri (geçici), parse edilen satır bilgileri (satıcı, ürün, fiyat, toplam, KDV), ürün listeniz (ürün adı, tedarikçi, paket, son ve önceki birim maliyet), hedef kâr marjı ve teslimat uygulaması komisyon tercihleriniz, bağlarsanız Google Sheet ID'niz | Uygulama kullanımı |
+| Hizmet Kullanımı | Yüklediğiniz fatura/makbuz görselleri (geçici), parse edilen satır bilgileri (satıcı, ürün, fiyat, toplam, KDV), ürün listeniz (ürün adı, tedarikçi, paket, son ve önceki birim maliyet ve girerseniz o ürünü kaça sattığınız), maliyetini çıkardığınız yemekler (ad, malzemeler, menü fiyatları), hedef kâr marjı ve teslimat uygulaması komisyon tercihleriniz, SNAP stok kontrolünü açarsanız SNAP kabul ettiğiniz bilgisi ve her ürünün gıda grubu, bağlarsanız Google Sheet ID'niz | Uygulama kullanımı |
 | Teknik/Cihaz | IP adresi, istek zaman damgası | Cloudflare erişim logları |
 | Bildirimler (isteğe bağlı) | Push bildirim token'ı, uygulama dili ve cihazınızın saat dilimi farkı — yalnızca bildirimlere izin verirseniz; haftalık tedarikçi maliyet uyarısı ve bir sonraki faturanızı taramanız için sabah saatlerinde gönderilen hatırlatma için. İkisi de Ayarlar'dan kapatılabilir | Uygulama (iOS) |
 | Square (isteğe bağlı) | Yalnız Square'i bağlarsanız: Square işletme kimliğiniz, şifrelenmiş erişim ve yenileme token'ları ve bir yemeği bağladığınızda okunan Square menü ürünleriniz (ad, varyasyon, fiyat). Bağlanan ürün kimliği ve menü fiyatı o yemekte saklanır | Square (OAuth) |
@@ -49,7 +49,7 @@ Uygulama, kişisel verilerinizi aşağıdaki hizmet sağlayıcılarla paylaşır
 
 | Alıcı | Konum | Amaç | Veri Türü |
 |---|---|---|---|
-| Anthropic, PBC | ABD | Fatura görselinin AI ile parse edilmesi (Claude API) | Fatura görseli (geçici, parse sonrası silinir) |
+| Anthropic, PBC | ABD | Fatura görselinin AI ile parse edilmesi (Claude API); yalnız SNAP stok kontrolünü açarsanız ürünlerinizin gıda gruplarına ayrılması | Fatura görseli (geçici, parse sonrası silinir). SNAP stok kontrolü açıkken: son faturalarınızdaki ürün adları ve paket bilgisi — adınız, e-postanız, maliyet ve fiyatlarınız asla |
 | Google LLC | Global | Google OAuth, Sheets API (kullanıcının kendi sheet'ine yazma), Drive metadata | Google profili, refresh token (şifreli) |
 | Cloudflare, Inc. | ABD (edge POP'ları globaldir) | Uygulama backend'i (Workers), kuyruk işleme, erişim logları | Tüm istek payload'ları (RAM'de geçici, persistent storage yok) |
 | Supabase, Inc. | ABD (us-east-1) | Postgres veritabanı (kullanıcı kayıtları, parse edilmiş faturalar, ürün listeniz, şifrelenmiş refresh token), Vault (anahtar yönetimi) | Kimlik, iletişim, fatura içeriği, ürün listesi, refresh token (şifreli) |

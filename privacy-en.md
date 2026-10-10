@@ -27,7 +27,7 @@ When you use the App, we process the following data:
 |---|---|---|
 | Identity | Google account ID (sub), name, profile picture | Google OAuth |
 | Contact | Email associated with your Google account | Google OAuth |
-| Service Usage | Receipt/invoice images you upload (transient), parsed line items (vendor, items, prices, totals, tax), your product list (product names, suppliers, pack sizes, latest and previous unit cost), your target profit margin and delivery-app commission preferences, your Google Sheet ID if you connect one | App use |
+| Service Usage | Receipt/invoice images you upload (transient), parsed line items (vendor, items, prices, totals, tax), your product list (product names, suppliers, pack sizes, latest and previous unit cost, and what you charge for an item if you enter it), the dishes you cost (name, ingredients, menu prices), your target profit margin and delivery-app commission preferences, whether you accept SNAP and the food group of each product if you turn on the SNAP stock check, your Google Sheet ID if you connect one | App use |
 | Technical / Device | IP address, request timestamp | Cloudflare access logs |
 | Notifications (optional) | Push notification token, app language and your device's time zone offset, only if you allow notifications — used for the weekly supplier-cost alert and for a reminder to scan your next invoice, sent mid-morning your time. Either can be switched off in Settings | App (iOS) |
 | Square (optional) | Only if you connect Square: your Square merchant ID, encrypted access and refresh tokens, and the Square menu items (names, variations, prices) read when you link a dish. The linked item ID and its menu price are saved on that dish | Square (OAuth) |
@@ -51,7 +51,7 @@ We share your data with the following service providers solely to operate Margin
 
 | Recipient | Location | Purpose | Data Type |
 |---|---|---|---|
-| Anthropic, PBC | USA | AI parsing of receipt images (Claude API) | Receipt images (transient, deleted after parse) |
+| Anthropic, PBC | USA | AI parsing of receipt images (Claude API); sorting your products into food groups, only if you turn on the SNAP stock check | Receipt images (transient, deleted after parse). With the SNAP stock check on: product names and pack sizes from your recent invoices — never your name, e-mail, costs or prices |
 | Google LLC | Global | Google OAuth, Sheets API (writing to your own sheet), Drive metadata | Google profile, encrypted refresh token |
 | Cloudflare, Inc. | USA (edge POPs are global) | App backend (Workers), queue processing, access logs | All request payloads (transient in RAM, no persistent storage) |
 | Supabase, Inc. | USA (us-east-1) | Postgres database (user records, parsed receipts, your product list, encrypted refresh token), Vault (key management) | Identity, contact, parsed receipt content, product list, encrypted refresh token |

@@ -29,7 +29,7 @@ Cuando usa la Aplicación, procesamos los siguientes datos:
 |---|---|---|
 | Identidad | ID de cuenta de Google (sub), nombre, foto de perfil | Google OAuth |
 | Contacto | Correo electrónico asociado a su cuenta de Google | Google OAuth |
-| Uso del Servicio | Imágenes de recibos/facturas que sube (transitorias), líneas de artículo extraídas (proveedor, artículos, precios, totales, impuestos), su lista de productos (nombres de productos, proveedores, tamaños de paquete, costo unitario más reciente y anterior), su margen de ganancia objetivo y sus preferencias de comisión de apps de reparto, el ID de su Google Sheet si conecta uno | Uso de la Aplicación |
+| Uso del Servicio | Imágenes de recibos/facturas que sube (transitorias), líneas de artículo extraídas (proveedor, artículos, precios, totales, impuestos), su lista de productos (nombres de productos, proveedores, tamaños de paquete, costo unitario más reciente y anterior, y lo que usted cobra por un artículo si lo ingresa), los platillos que costea (nombre, ingredientes, precios de menú), su margen de ganancia objetivo y sus preferencias de comisión de apps de reparto, si acepta SNAP y el grupo de alimentos de cada producto si activa la revisión de surtido SNAP, el ID de su Google Sheet si conecta uno | Uso de la Aplicación |
 | Técnico / Dispositivo | Dirección IP, marca de tiempo de la solicitud | Registros de acceso de Cloudflare |
 | Notificaciones (opcional) | Token de notificaciones push, idioma de la app y la diferencia horaria de su dispositivo, solo si permite las notificaciones — se usa para el aviso semanal de costos de proveedores y para un recordatorio de escanear su próxima factura, enviado a media mañana en su hora local. Ambos se pueden desactivar en Ajustes | Aplicación (iOS) |
 | Square (opcional) | Solo si conecta Square: su ID de comercio de Square, tokens de acceso y de actualización cifrados, y los productos de su menú de Square (nombres, variantes, precios) que se leen al vincular un platillo. El ID del producto vinculado y su precio de menú se guardan en ese platillo | Square (OAuth) |
@@ -53,7 +53,7 @@ Compartimos sus datos con los siguientes proveedores de servicios únicamente pa
 
 | Destinatario | Ubicación | Finalidad | Tipo de Dato |
 |---|---|---|---|
-| Anthropic, PBC | EE. UU. | Lectura de recibos mediante IA (API de Claude) | Imágenes de recibos (transitorias, eliminadas tras la lectura) |
+| Anthropic, PBC | EE. UU. | Lectura de recibos mediante IA (API de Claude); clasificar sus productos por grupo de alimentos, solo si activa la revisión de surtido SNAP | Imágenes de recibos (transitorias, eliminadas tras la lectura). Con la revisión de surtido SNAP activada: nombres de productos y tamaños de paquete de sus facturas recientes — nunca su nombre, correo, costos ni precios |
 | Google LLC | Global | Google OAuth, API de Sheets (escritura en su propio sheet), metadatos de Drive | Perfil de Google, token de actualización cifrado |
 | Cloudflare, Inc. | EE. UU. (los puntos de presencia son globales) | Backend de la Aplicación (Workers), procesamiento de colas, registros de acceso | Todas las cargas de solicitud (transitorias en RAM, sin almacenamiento persistente) |
 | Supabase, Inc. | EE. UU. (us-east-1) | Base de datos Postgres (registros de usuario, recibos procesados, su lista de productos, token de actualización cifrado), Vault (gestión de claves) | Identidad, contacto, contenido de recibos procesados, lista de productos, token de actualización cifrado |
